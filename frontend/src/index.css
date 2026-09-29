@@ -1,0 +1,128 @@
+/* Единая гарнитура: IBM Plex Sans во всех начертаниях (лайт → болд),
+   локально (@fontsource) — демо офлайн. Моноширинной второй гарнитуры нет:
+   цифровые блоки набираются тем же шрифтом с tabular-nums. */
+@import "@fontsource/ibm-plex-sans/300.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/ibm-plex-sans/cyrillic-300.css";
+@import "@fontsource/ibm-plex-sans/cyrillic-400.css";
+@import "@fontsource/ibm-plex-sans/cyrillic-500.css";
+@import "@fontsource/ibm-plex-sans/cyrillic-600.css";
+@import "@fontsource/ibm-plex-sans/cyrillic-700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: #f9f9f7;
+  color: #0b0b0b;
+}
+
+body {
+  font-family: "IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+/* Индикатор «обдумывает ответ»: цикл 1.3 s, сдвиг фаз 0.25 s */
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.25; }
+  30% { opacity: 1; }
+}
+.typing-dot { animation: typing-dot 1.3s infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.25s; }
+.typing-dot:nth-child(3) { animation-delay: 0.5s; }
+
+/* Появление карточек и реплик */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise-in { animation: rise-in 0.25s ease-out; }
+
+/* Событие: fade + сдвиг сверху −8px, 200 ms */
+@keyframes event-in {
+  from { opacity: 0; transform: translate(-50%, -8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+.event-in { animation: event-in 0.2s ease-out; }
+
+/* Панель 420: слайд справа 240 ms */
+@keyframes panel-in {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.panel-in { animation: panel-in 0.24s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+/* Плавная заливка баров */
+.bar-fill { transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* --- Сцена лайт-новеллы («хвоя» §03, §07) --- */
+
+/* Дыхание спрайта: translateY 0→2px, 4.4 s */
+@keyframes sprite-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+.sprite-breathe { animation: sprite-breathe 4.4s ease-in-out infinite; }
+
+@keyframes sprite-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.sprite-in { animation: sprite-in 0.4s ease-out; }
+
+/* Курсор печати: 2px × 1.05em, акцент, steps(1) 1.05 s */
+@keyframes caret-blink { 50% { opacity: 0; } }
+.vn-caret {
+  display: inline-block;
+  width: 2px; height: 1.05em;
+  vertical-align: text-bottom;
+  background: #1f7a6f;
+  margin-left: 2px;
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+
+/* «На взводе»: дрожь ±0.6px ~90 ms, 3 цикла при смене реплики */
+@keyframes sprite-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-0.6px); }
+  75% { transform: translateX(0.6px); }
+}
+.sprite-shake { animation: sprite-shake 90ms ease-in-out 3; }
+
+@keyframes narrative-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 0.9; transform: translateY(0); }
+}
+.narrative-in { animation: narrative-in 0.3s ease-out; }
+
+/* Виньетка сцены (§03) */
+.vignette {
+  background: linear-gradient(180deg, rgba(0,0,0,.08) 0%, transparent 20%,
+    transparent 58%, rgba(0,0,0,.22) 82%, rgba(0,0,0,.4) 100%);
+}
+
+/* Тень под персонажем: эллипс у линии стола */
+.sprite-shadow {
+  width: 300px; height: 30px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.34);
+  filter: blur(12px);
+}
+
+/* Скримы */
+.scrim { background: rgba(8,14,13,.45); }
+.scrim-final { background: rgba(8,14,13,.6); backdrop-filter: blur(2px); }
+
+/* Метка-тег: 9px caps (§02) — нумерации «в кружках» в системе нет.
+   Та же гарнитура, вес 600, разрядка вместо смены шрифта. */
+.tag {
+  font-family: "IBM Plex Sans", system-ui, "Segoe UI", sans-serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #14594f;
+  font-variant-numeric: tabular-nums;
+}
