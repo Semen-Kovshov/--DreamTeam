@@ -1,0 +1,22 @@
+.env
+backend/.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+data/history.jsonl
+data/sessions/
+
+# Материалы организаторов (шаблон презентации, ТЗ-архив) — не наш код;
+# нужное из ТЗ уже разобрано в docs/01-task-analysis.md и docs/08-tz-compliance.md.
+ресурсы/
+
+# ОС и редакторы
+Thumbs.db
+desktop.ini
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
