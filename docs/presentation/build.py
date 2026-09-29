@@ -18,6 +18,7 @@ from pathlib import Path
 
 from PIL import Image
 from pptx import Presentation
+from pptx.enum.shapes import MSO_SHAPE_TYPE, PP_PLACEHOLDER
 from pptx.oxml.ns import qn
 from pptx.dml.color import RGBColor
 from pptx.text.text import _Paragraph
@@ -29,16 +30,20 @@ TPL = ROOT / "ресурсы" / "ЛЦТ2026 Шаблон презентации.
 SHOTS = HERE / "shots"
 OUT = HERE / "Вторая сторона — ЛЦТ 2026.pptx"
 
-# Данные команды подставляются здесь: скрипт не выдумывает людей.
-TEAM = "⟨НАЗВАНИЕ КОМАНДЫ⟩"
+# Данные команды.
+TEAM = "Dream Team"
 MEMBERS = [
-    ("⟨Имя Фамилия⟩", "⟨роль в команде⟩\n⟨telegram⟩\n⟨телефон⟩\n⟨место работы или учёбы⟩"),
-] * 5
-TEAM_ABOUT = ("Капитан: ⟨ФИО, специальность⟩\n"
-              "Количество участников: ⟨N⟩\n"
-              "Город и регион: ⟨город⟩\n"
-              "Место работы или учёбы участников: ⟨где⟩")
-TEAM_STORY = "⟨как собрались, участвовали ли вместе раньше, интересные факты⟩"
+    ("Семён Ковшов", "Frontend · Backend", "@zzerrggg", "+7 963 196-72-80",
+     "НИТГУ, физтех, 16.30.01", HERE / "team" / "kovshov.png"),
+    ("Дарья Зинченко", "Frontend · Backend · дизайнер", "@zincenkodv",
+     "+7 952 158-90-03", "НИТГУ, физтех, 16.30.01", HERE / "team" / "zinchenko.png"),
+]
+TEAM_ABOUT = ("Капитан: Семён Ковшов, физтех НИТГУ, 16.30.01\n"
+              "Количество участников: 2\n"
+              "Город и регион: Томск, Томская область\n"
+              "Место работы или учёбы участников: НИТГУ, физтех, 16.30.01")
+TEAM_STORY = ("Двое с физтеха НИТГУ (Томск, специальность 16.30.01): один и тот же "
+              "стек — frontend и backend у обоих, третья пара рук — в дизайне.")
 
 
 # --- утилиты -------------------------------------------------------------
@@ -206,15 +211,36 @@ def build() -> Path:
 
     # 3. Команда -----------------------------------------------------------
     team = s[8]
-    write(ph(team, 0), "КОМАНДА")
-    names = [sh for sh in team.shapes
-             if sh.has_text_frame and sh.text_frame.text.strip() == "Имя Фамилия"]
-    roles = [sh for sh in team.shapes
-             if sh.has_text_frame and "Роль в команде" in sh.text_frame.text]
-    for shape, (name, _) in zip(sorted(names, key=lambda sh: sh.left), MEMBERS):
-        write(shape, name)
-    for shape, (_, role) in zip(sorted(roles, key=lambda sh: sh.left), MEMBERS):
-        write(shape, *role.split("\n"))
+    write(ph(team, 0), f"КОМАНДА «{TEAM.upper()}»")
+    # Заготовка рассчитана на 5 карточек, а участников — 2: заполняем первые
+    # по x-позиции слева направо, остальные три (фон, фото, имя, роль) удаляем
+    # целиком, а не оставляем с текстом-подсказкой «Имя Фамилия».
+    backgrounds = sorted((sh for sh in team.shapes if sh.shape_type == MSO_SHAPE_TYPE.AUTO_SHAPE
+                          and sh.top > Inches(1)), key=lambda sh: sh.left)
+    photos = sorted((sh for sh in team.shapes if sh.is_placeholder
+                     and sh.placeholder_format.type == PP_PLACEHOLDER.PICTURE),
+                    key=lambda sh: sh.left)
+    names = sorted((sh for sh in team.shapes
+                    if sh.has_text_frame and sh.text_frame.text.strip() == "Имя Фамилия"),
+                   key=lambda sh: sh.left)
+    roles = sorted((sh for sh in team.shapes
+                    if sh.has_text_frame and "Роль в команде" in sh.text_frame.text),
+                   key=lambda sh: sh.left)
+    for slot, (bg, photo, name_sh, role_sh) in enumerate(zip(backgrounds, photos, names, roles)):
+        if slot < len(MEMBERS):
+            full_name, role, tg, phone, place, photo_path = MEMBERS[slot]
+            write(name_sh, full_name)
+            write(role_sh, role, tg, phone, place)
+            # Геометрия этих фото-заполнителей есть в разметке (не наследуется
+            # с макета), но `insert_picture` почему-то не переносит её на
+            # получившийся <p:pic> — кроп считает верно, а рамку обнуляет.
+            # Восстанавливаем позицию и размер руками.
+            geom = (photo.left, photo.top, photo.width, photo.height)
+            pic = photo.insert_picture(str(photo_path))
+            pic.left, pic.top, pic.width, pic.height = geom
+        else:
+            for shape in (bg, photo, name_sh, role_sh):
+                drop(shape)
 
     # 4. История команды ---------------------------------------------------
     story = s[9]
