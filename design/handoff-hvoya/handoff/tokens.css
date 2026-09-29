@@ -1,0 +1,68 @@
+/* Тренажёр переговоров — дизайн-токены «хвоя» (v1, 19.08.2026)
+   Полная спецификация: «Дизайн-спецификация (хвоя)».html; эталоны — «Варианты дизайна — Партия» (3a, 4a–4i). */
+:root{
+  /* фон и поверхности */
+  --bg:#f9f9f7; --surface:#fcfcfb; --glass:rgba(252,252,251,.94); --glass-blur:12px;
+  --fill:#f4f3ef; /* нейтральные чипы/плашки */
+  /* текст */
+  --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#898781;
+  --ink-dark:#f4f4ef; --ink-dark-2:rgba(244,244,239,.62);
+  /* линии */
+  --line:#e1e0d9; --line-in:#edece6;
+  /* акцент «хвоя» */
+  --acc:#1f7a6f; --acc-dark:#14594f; --acc-light:#d5ece6; --acc-tint:#e6f1ee;
+  /* статусы */
+  --ok:#5f9c53; --warn:#d9a12b; --hot:#d97a3f; --crit:#c04b3c;
+  /* настроения персонажа */
+  --mood-calm:#898781; --mood-pleased:#5f9c53; --mood-tense:#d97a3f; --mood-angry:#c04b3c;
+  /* событие */
+  --event-bg:rgba(253,244,222,.97); --event-border:rgba(217,161,43,.6); --event-ink:#a8760c;
+  /* радиусы */
+  --r-window:18px; --r-card:14px; --r-btn:12px; --r-pill:999px;
+  /* тени */
+  --sh-window:0 18px 44px rgba(10,12,18,.32);
+  --sh-card:0 8px 24px rgba(10,12,18,.18);
+  --sh-btn:0 2px 8px rgba(31,122,111,.4);
+  --sh-tab:0 4px 12px rgba(10,12,18,.14);
+  --sh-panel:-24px 0 60px rgba(0,0,0,.35);
+  /* типографика */
+  --font-ui:"IBM Plex Sans",system-ui,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",monospace;
+}
+/* Кнопки */
+.btn-primary{height:44px;padding:0 24px;border-radius:var(--r-btn);background:var(--acc);color:#fff;font:600 13.5px var(--font-ui);border:none;box-shadow:var(--sh-btn);cursor:pointer}
+.btn-primary:hover{background:var(--acc-dark)}
+.btn-ghost{height:44px;padding:0 22px;border-radius:var(--r-btn);background:var(--surface);color:var(--ink-2);font:600 13.5px var(--font-ui);border:1px solid var(--line);cursor:pointer}
+.btn-ghost:hover{border-color:var(--ink-3)}
+:is(.btn-primary,.btn-ghost):disabled{opacity:.55;cursor:default}
+/* Поле ввода */
+.input{height:44px;padding:0 16px;border-radius:var(--r-btn);border:1px solid var(--line);background:#fff;color:var(--ink);font:13.5px var(--font-ui);box-shadow:inset 0 1px 3px rgba(10,12,18,.05);outline:none}
+.input:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc-light)}
+.input:disabled{background:var(--fill);color:var(--ink-3)}
+/* Чип приёма (+ вложенный бейдж дельты) */
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--fill);border:1px solid transparent;border-radius:var(--r-pill);padding:6px 13px;font:500 12px var(--font-ui);color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--acc);background:var(--acc-tint)}
+.chip .delta{font:600 10px var(--font-mono);background:#fff;border-radius:var(--r-pill);padding:1px 6px}
+/* Метрика: бар 6px */
+.meter{height:6px;border-radius:3px;background:var(--line-in)}
+.meter>i{display:block;height:6px;border-radius:3px}
+.meter.trust>i{background:linear-gradient(90deg,#4da296,var(--acc))}
+.meter.tension>i{background:linear-gradient(90deg,#e0b45c,var(--warn))}
+.meter.patience>i{background:linear-gradient(90deg,#8bbb7d,var(--ok))}
+/* Метка-тег (замена нумерации — цифр в кружках в системе нет) */
+.tag{font:600 9px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acc-dark)}
+/* Кнопка действия-мелочи 40px, иконка 20px stroke 1.5 currentColor */
+.action{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink-2);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(10,12,18,.08);cursor:pointer}
+.action:hover{border-color:var(--acc);color:var(--acc-dark);background:var(--acc-light)}
+.action.cooldown{border-color:#eae9e2;color:#c9c7c0;pointer-events:none} /* + бейдж «N с» mono 8.5px */
+/* Таймер хода (только свободный режим): пороги 75 с / 150 с */
+.timer{display:inline-flex;align-items:center;gap:8px;font:12px var(--font-mono);border-radius:var(--r-pill);padding:6px 12px;color:var(--ink-2);background:#fff;border:1px solid var(--line)}
+.timer.hot{color:#a8551f;background:rgba(217,122,63,.12);border-color:rgba(217,122,63,.55)}
+.timer.crit{color:#8f2f24;background:rgba(192,75,60,.13);border-color:rgba(192,75,60,.6)}
+/* Сцена */
+.vignette{background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,transparent 20%,transparent 58%,rgba(0,0,0,.22) 82%,rgba(0,0,0,.4) 100%)}
+.scrim{background:rgba(8,14,13,.45)} .scrim-final{background:rgba(8,14,13,.6);backdrop-filter:blur(2px)}
+/* Анимации */
+@keyframes vn-breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}} /* спрайт: 4.4s ease-in-out infinite */
+@keyframes vn-caret{50%{opacity:0}}                                                   /* курсор: 1.05s steps(1) infinite */
+@keyframes vn-dots{0%,60%,100%{opacity:.25}30%{opacity:1}}                            /* ожидание: 1.3s, фазы +0.25s */

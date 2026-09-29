@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=PT+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f0eee9;font-family:"IBM Plex Sans",system-ui,"Segoe UI",sans-serif}
+a{color:#1c5cab;text-decoration:none}a:hover{color:#2a78d6}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 14px}
+.dv-tid{font:600 10px "IBM Plex Mono",monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 "IBM Plex Sans",sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px "IBM Plex Mono",monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 "IBM Plex Sans",sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 "IBM Plex Sans",sans-serif;color:rgba(0,0,0,.5)}
+@keyframes vnbreathe{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+@keyframes vnblink{50%{opacity:0}}
+@keyframes vndots{0%,60%,100%{opacity:.25}30%{opacity:1}}
+</style>
+</helmet>
+<section class="dv-turn" id="t4">
+<div class="dv-thd"><a class="dv-tid" href="#t4">4</a><span class="dv-tname">Система <a class="dv-oid" href="#3a">3a</a> «хвоя» на всех экранах и состояниях: каталог · бриф · партия (ожидание+событие, экзамен, финал) · оверлеи · таймер · разбор</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="4a">
+<div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a>Каталог (§2.1): карточки сценариев с арт-подложками + журнал прошлых партий</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#f9f9f7;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="display:flex;align-items:center;gap:12px;padding:15px 48px;border-bottom:1px solid #e1e0d9;background:#fcfcfb">
+<div style="width:30px;height:30px;border-radius:9px;background:repeating-linear-gradient(45deg,#cfe4de 0 5px,#d5ece6 5px 10px);border:1px solid #1f7a6f;display:flex;align-items:center;justify-content:center;font:600 7.5px 'IBM Plex Mono',monospace;color:#14594f">знак</div>
+<span style="font-size:15px;font-weight:700;color:#0b0b0b">Тренажёр переговоров</span>
+<span style="flex:1"></span>
+<span style="font:10.5px 'IBM Plex Mono',monospace;color:#898781">4 сценария · 3 партии сыграно</span>
+</div>
+<div style="padding:24px 48px">
+<div style="font-size:20px;font-weight:700;color:#0b0b0b">Выберите сценарий</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px">
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:12px;overflow:hidden;cursor:pointer" style-hover="box-shadow:0 10px 24px rgba(20,40,36,.12);border-color:#cfe4de">
+<div style="position:relative;height:104px;background:radial-gradient(ellipse 70% 60% at 78% 30%,rgba(255,186,118,.3),transparent 65%),linear-gradient(140deg,#2c363b,#5c6b60)"><span style="position:absolute;right:8px;bottom:6px;font:8.5px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.55)">кроп scenes/salary.jpg</span><div style="position:absolute;left:14px;bottom:-16px;width:44px;height:44px;border-radius:50%;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:2px solid #fcfcfb;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">И</div></div>
+<div style="padding:22px 14px 13px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">Работа</div><div style="font-size:14.5px;font-weight:700;color:#0b0b0b;margin-top:3px">Пересмотр зарплаты</div><div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:5px;min-height:50px">Год без индексации. Убедите Ирину пересмотреть оклад — или зафиксируйте понятный план.</div><div style="display:flex;align-items:center;gap:8px;margin-top:9px"><span style="display:inline-flex;gap:3px"><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#e1e0d9"></span><span style="width:7px;height:7px;border-radius:50%;background:#e1e0d9"></span></span><span style="flex:1"></span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">якорение</span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">аргументы</span></div></div>
+</div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:12px;overflow:hidden;cursor:pointer" style-hover="box-shadow:0 10px 24px rgba(20,40,36,.12);border-color:#cfe4de">
+<div style="position:relative;height:104px;background:radial-gradient(ellipse 70% 60% at 30% 30%,rgba(255,205,140,.34),transparent 65%),linear-gradient(140deg,#4a3623,#8a6a42)"><span style="position:absolute;right:8px;bottom:6px;font:8.5px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.55)">кроп scenes/supplier.jpg</span><div style="position:absolute;left:14px;bottom:-16px;width:44px;height:44px;border-radius:50%;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:2px solid #fcfcfb;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">С</div></div>
+<div style="padding:22px 14px 13px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">Закупки</div><div style="font-size:14.5px;font-weight:700;color:#0b0b0b;margin-top:3px">Контракт с обжарщиком</div><div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:5px;min-height:50px">Сергей поднимает цены на зерно. Удержите условия поставки, не потеряв партнёра.</div><div style="display:flex;align-items:center;gap:8px;margin-top:9px"><span style="display:inline-flex;gap:3px"><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#e1e0d9"></span></span><span style="flex:1"></span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">торг</span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">пакеты</span></div></div>
+</div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:12px;overflow:hidden;cursor:pointer" style-hover="box-shadow:0 10px 24px rgba(20,40,36,.12);border-color:#cfe4de">
+<div style="position:relative;height:104px;background:radial-gradient(ellipse 70% 60% at 70% 25%,rgba(214,228,236,.4),transparent 65%),linear-gradient(140deg,#33404d,#6e8296)"><span style="position:absolute;right:8px;bottom:6px;font:8.5px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.55)">кроп scenes/discount.jpg</span><div style="position:absolute;left:14px;bottom:-16px;width:44px;height:44px;border-radius:50%;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:2px solid #fcfcfb;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">М</div></div>
+<div style="padding:22px 14px 13px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">Продажи</div><div style="font-size:14.5px;font-weight:700;color:#0b0b0b;margin-top:3px">Клиент просит скидку</div><div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:5px;min-height:50px">Марина просит −20%. Сохраните маржу — и отношения с ключевым клиентом.</div><div style="display:flex;align-items:center;gap:8px;margin-top:9px"><span style="display:inline-flex;gap:3px"><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#e1e0d9"></span><span style="width:7px;height:7px;border-radius:50%;background:#e1e0d9"></span></span><span style="flex:1"></span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">ценность</span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">уступки</span></div></div>
+</div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:12px;overflow:hidden;cursor:pointer" style-hover="box-shadow:0 10px 24px rgba(20,40,36,.12);border-color:#cfe4de">
+<div style="position:relative;height:104px;background:radial-gradient(ellipse 70% 60% at 25% 70%,rgba(226,206,150,.3),transparent 65%),linear-gradient(140deg,#3d3a2e,#75705a)"><span style="position:absolute;right:8px;bottom:6px;font:8.5px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.55)">кроп scenes/rent.jpg</span><div style="position:absolute;left:14px;bottom:-16px;width:44px;height:44px;border-radius:50%;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:2px solid #fcfcfb;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">А</div></div>
+<div style="padding:22px 14px 13px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">Аренда</div><div style="font-size:14.5px;font-weight:700;color:#0b0b0b;margin-top:3px">Ставка за офис</div><div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:5px;min-height:50px">Аркадий Петрович против снижения ставки. Найдите обмен, который устроит обоих.</div><div style="display:flex;align-items:center;gap:8px;margin-top:9px"><span style="display:inline-flex;gap:3px"><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#1f7a6f"></span><span style="width:7px;height:7px;border-radius:50%;background:#e1e0d9"></span></span><span style="flex:1"></span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">обмен</span><span style="background:#f4f3ef;border-radius:999px;padding:2px 8px;font-size:9.5px;color:#52514e">рамки</span></div></div>
+</div>
+</div>
+<div style="display:flex;align-items:baseline;gap:10px;margin-top:24px"><span style="font-size:13px;font-weight:700;color:#0b0b0b">Прошлые партии</span><span style="flex:1"></span><span style="font-size:11px;font-weight:600;color:#14594f;cursor:pointer;border-bottom:1px dotted #1f7a6f">все партии</span></div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:12px;margin-top:10px">
+<div style="display:flex;align-items:center;gap:14px;padding:11px 16px;border-bottom:1px solid #edece6"><span style="font:10px 'IBM Plex Mono',monospace;color:#898781;width:66px">16 авг</span><span style="font-size:12.5px;font-weight:600;color:#0b0b0b">Клиент просит скидку</span><span style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;background:#f4f3ef;border-radius:5px;padding:2px 7px;color:#52514e">свободный</span><span style="flex:1"></span><span style="font-size:11.5px;color:#52514e">скидка 8% против 20 — маржа спасена</span><span style="font:700 11px 'IBM Plex Mono',monospace;background:#d5ece6;color:#14594f;border-radius:7px;padding:3px 9px">82</span></div>
+<div style="display:flex;align-items:center;gap:14px;padding:11px 16px;border-bottom:1px solid #edece6"><span style="font:10px 'IBM Plex Mono',monospace;color:#898781;width:66px">14 авг</span><span style="font-size:12.5px;font-weight:600;color:#0b0b0b">Пересмотр зарплаты</span><span style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;background:#f4f3ef;border-radius:5px;padding:2px 7px;color:#52514e">обучение</span><span style="flex:1"></span><span style="font-size:11.5px;color:#52514e">сделка: 98 000 ₽ + пересмотр</span><span style="font:700 11px 'IBM Plex Mono',monospace;background:#d5ece6;color:#14594f;border-radius:7px;padding:3px 9px">76</span></div>
+<div style="display:flex;align-items:center;gap:14px;padding:11px 16px"><span style="font:10px 'IBM Plex Mono',monospace;color:#898781;width:66px">11 авг</span><span style="font-size:12.5px;font-weight:600;color:#0b0b0b">Контракт с обжарщиком</span><span style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;background:#f4f3ef;border-radius:5px;padding:2px 7px;color:#52514e">экзамен</span><span style="flex:1"></span><span style="font-size:11.5px;color:#52514e">вышли без сделки — цена выросла бы на 12%</span><span style="font:700 11px 'IBM Plex Mono',monospace;background:#f3e2c8;color:#7a5408;border-radius:7px;padding:3px 9px">58</span></div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="4b">
+<div class="dv-olabel"><a class="dv-oid" href="#4b">4b</a>Бриф (§2.2): крупный портрет, ситуация, выбор режима, «Начать переговоры»</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#f9f9f7;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="display:flex;align-items:center;gap:12px;padding:15px 48px;border-bottom:1px solid #e1e0d9;background:#fcfcfb">
+<span style="font-size:12px;font-weight:600;color:#14594f;cursor:pointer">← Каталог</span>
+<span style="flex:1"></span>
+<span style="font:10.5px 'IBM Plex Mono',monospace;color:#898781">сценарий · salary</span>
+</div>
+<div style="display:flex;gap:34px;padding:26px 48px">
+<div style="width:330px;flex:none;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:14px;overflow:hidden">
+<div style="position:relative;height:412px;background:repeating-linear-gradient(45deg,#d3dcd5 0 10px,#dde4dc 10px 20px)"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;font:10px/1.7 'IBM Plex Mono',monospace;color:#6b7a70">портрет: кроп<br>sprites/salary/calm.png<br>900×1200</div><div style="position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(180deg,transparent,rgba(20,30,26,.16))"></div></div>
+<div style="padding:13px 16px;display:flex;align-items:center;gap:10px"><div><div style="font-size:14.5px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="font-size:11px;color:#898781">руководитель отдела продуктов, ~40</div></div><span style="flex:1"></span><span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#f4f3ef"><span style="width:7px;height:7px;border-radius:50%;background:#898781"></span><span style="font-size:11px;color:#52514e">спокойна</span></span></div>
+</div>
+<div style="flex:1;min-width:0">
+<div style="font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#14594f">Работа · сложность 2 из 4</div>
+<div style="font-size:27px;font-weight:700;color:#0b0b0b;margin-top:6px">Пересмотр зарплаты</div>
+<div style="font-size:13px;line-height:1.65;color:#52514e;margin-top:10px;max-width:660px;text-wrap:pretty">Год без индексации, на вас — два продукта. Ирина ценит вас, но связана январским бюджетом и не любит прецедентов. Сдержанная, с лёгкой усталой иронией: на давление отвечает холодом, на аргументы — вниманием. Убедите её пересмотреть оклад или зафиксируйте понятный план пересмотра.</div>
+<div style="display:flex;gap:10px;margin-top:16px">
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:10px;padding:10px 16px"><div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Цель</div><div style="font-size:15px;font-weight:700;color:#0b0b0b;margin-top:2px">105 000 ₽</div></div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:10px;padding:10px 16px"><div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Минимум</div><div style="font-size:15px;font-weight:700;color:#0b0b0b;margin-top:2px">98 000 ₽</div></div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:10px;padding:10px 16px"><div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Время</div><div style="font-size:15px;font-weight:700;color:#0b0b0b;margin-top:2px">≈ 15 мин</div></div>
+</div>
+<div style="font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781;margin-top:20px">Режим партии</div>
+<div style="display:flex;gap:12px;margin-top:9px;max-width:680px">
+<div style="flex:1;border:1.5px solid #1f7a6f;background:#e6f1ee;border-radius:12px;padding:12px 14px;cursor:pointer"><div style="font-size:13px;font-weight:700;color:#14594f">Обучение</div><div style="font-size:11px;line-height:1.5;color:#52514e;margin-top:4px">Чипы приёмов, подсказки и дельты — учимся прямо в бою.</div><div style="font:600 8.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#14594f;margin-top:7px">выбран</div></div>
+<div style="flex:1;border:1px solid #e1e0d9;background:#fcfcfb;border-radius:12px;padding:12px 14px;cursor:pointer" style-hover="border-color:#1f7a6f"><div style="font-size:13px;font-weight:700;color:#0b0b0b">Свободный</div><div style="font-size:11px;line-height:1.5;color:#52514e;margin-top:4px">Таймер хода, без подсказок. Ближе к жизни.</div><div style="font:600 8.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#898781;margin-top:7px">таймер</div></div>
+<div style="flex:1;border:1px solid #e1e0d9;background:#fcfcfb;border-radius:12px;padding:12px 14px;cursor:pointer" style-hover="border-color:#1f7a6f"><div style="font-size:13px;font-weight:700;color:#0b0b0b">Экзамен</div><div style="font-size:11px;line-height:1.5;color:#52514e;margin-top:4px">Индикаторы скрыты, оценка строже. Только вы и Ирина.</div><div style="font:600 8.5px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#898781;margin-top:7px">без подсказок</div></div>
+</div>
+<div style="display:flex;gap:12px;margin-top:22px;align-items:center">
+<div style="height:46px;padding:0 30px;border-radius:12px;background:#1f7a6f;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(31,122,111,.4)" style-hover="background:#14594f">Начать переговоры</div>
+<div style="height:46px;padding:0 22px;border-radius:12px;border:1px solid #e1e0d9;color:#52514e;font-size:13px;font-weight:600;display:flex;align-items:center;cursor:pointer;background:#fcfcfb" style-hover="border-color:#898781">Карта подготовки</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="4c">
+<div class="dv-olabel"><a class="dv-oid" href="#4c">4c</a>Партия · ожидание ответа + событие (свободный режим, таймер 75с+ — оранжевый, ввод заблокирован)</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,transparent 20%,transparent 58%,rgba(0,0,0,.22) 82%,rgba(0,0,0,.4) 100%)"></div>
+<div style="position:absolute;left:calc(50% - 150px);bottom:244px;width:300px;height:30px;border-radius:50%;background:rgba(0,0,0,.34);filter:blur(12px)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:252px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/calm.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:16px;left:50%;transform:translateX(-50%);width:390px;background:rgba(253,244,222,.97);border:1px solid rgba(217,161,43,.6);border-radius:12px;padding:10px 14px;box-shadow:0 8px 28px rgba(0,0,0,.35)">
+<div style="display:flex;align-items:center"><span style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a8760c">Событие</span><span style="flex:1"></span><span style="font-size:14px;line-height:1;color:#a8760c;cursor:pointer">×</span></div>
+<div style="font-size:12px;line-height:1.5;color:#52514e;margin-top:4px">В приёмной ждёт следующий кандидат — терпение Ирины тает быстрее.</div>
+</div>
+<div style="position:absolute;top:18px;left:18px;width:248px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:13px 15px;box-shadow:0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid #edece6"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Позиция</span><span style="font:10px 'IBM Plex Mono',monospace;color:#b9b7b0">13 мин</span></div>
+<div style="padding:9px 0 2px;display:flex;flex-direction:column;gap:9px">
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Доверие</span><span style="flex:1"></span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">62</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:62%;height:6px;border-radius:3px;background:linear-gradient(90deg,#4da296,#1f7a6f)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Напряжение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#c04b3c">+6</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">40</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:40%;height:6px;border-radius:3px;background:linear-gradient(90deg,#e0b45c,#d9a12b)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Терпение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#c04b3c">−9</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">62</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:62%;height:6px;border-radius:3px;background:linear-gradient(90deg,#8bbb7d,#5f9c53)"></div></div></div>
+</div>
+<div style="margin-top:10px;padding-top:11px;border-top:1px solid #edece6">
+<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">На столе</div>
+<div style="display:flex;align-items:baseline;gap:7px;margin-top:4px"><span style="font-size:19px;font-weight:700;color:#0b0b0b">92 000 ₽</span><span style="font-size:11px;color:#898781">/ мес</span></div>
+<div style="display:flex;gap:8px;margin-top:11px">
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;background:#1f7a6f;color:#fff;font-size:12.5px;font-weight:600;cursor:pointer;opacity:.55">Принять</div>
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;border:1px solid #e1e0d9;color:#52514e;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.6);opacity:.55">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:18px;right:18px;width:252px;display:flex;flex-direction:column;gap:9px">
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:11px 13px;box-shadow:0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #fff;box-shadow:0 0 0 2px #d5ece6;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">И</div>
+<div style="min-width:0"><div style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="font-size:10.5px;color:#898781">руководитель отдела продуктов</div></div>
+</div>
+<div style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:4px 10px;border-radius:999px;background:#f4f3ef"><span style="width:7px;height:7px;border-radius:50%;background:#898781"></span><span style="font-size:11px;color:#52514e">спокойна</span></div>
+</div>
+<div style="display:flex;background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:11px;padding:3px;gap:2px">
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer">Журнал</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer">Бриф</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#14594f;background:#d5ece6;border-radius:8px;cursor:pointer">Подсказки</span>
+</div>
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:11px 13px;box-shadow:0 8px 24px rgba(10,12,18,.18)">
+<div style="padding-bottom:8px;border-bottom:1px solid #edece6"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Подсказки</span></div>
+<div style="padding:9px 0;border-bottom:1px solid #edece6"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">событие</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Терпение тает ×2 — не затягивайте раунд.</div></div>
+<div style="padding:9px 0 1px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">темп</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Пока она думает — запишите её условия в блокнот.</div></div>
+</div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(252,252,251,.96);backdrop-filter:blur(14px);border:1px solid #e1e0d9;border-radius:18px;padding:16px 24px;box-shadow:0 18px 44px rgba(10,12,18,.32)">
+<div style="position:absolute;top:-15px;left:24px;display:flex;align-items:center;gap:8px;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:9px;padding:5px 13px;box-shadow:0 4px 12px rgba(10,12,18,.14)"><span style="font-size:13px;font-weight:700;color:#0b0b0b">…</span><span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#898781;border:1px solid #e1e0d9;border-radius:4px;padding:1px 5px">ИИ</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:10px;align-items:center;margin-top:2px">
+<div style="display:inline-flex;gap:7px;align-items:center;background:rgba(11,11,11,.035);border:1px solid #eae9e2;border-radius:999px;padding:5px 7px">
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="position:relative;width:38px;height:38px;border-radius:50%;border:1px solid #eae9e2;background:#fff;color:#c9c7c0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg><span style="position:absolute;right:-4px;bottom:-3px;font:500 8.5px 'IBM Plex Mono',monospace;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:999px;padding:1px 4px;color:#898781">9с</span></div>
+</div>
+<span style="flex:1"></span>
+<span style="display:inline-flex;align-items:center;gap:8px;font:12px 'IBM Plex Mono',monospace;color:#a8551f;border:1px solid rgba(217,122,63,.55);border-radius:999px;padding:6px 12px;background:rgba(217,122,63,.12)"><span style="font-size:9.5px;letter-spacing:.08em;font-family:'IBM Plex Sans',sans-serif;text-transform:uppercase">свободный</span>1:23<span style="width:44px;height:4px;border-radius:2px;background:rgba(217,122,63,.25);display:inline-block"><span style="display:block;width:58%;height:4px;border-radius:2px;background:#d97a3f"></span></span></span>
+</div>
+<div style="font-size:15px;line-height:1.6;color:#898781;font-style:italic">обдумывает ответ<span style="animation:vndots 1.3s infinite">.</span><span style="animation:vndots 1.3s .25s infinite">.</span><span style="animation:vndots 1.3s .5s infinite">.</span></div>
+<div style="font-size:11px;color:#898781;letter-spacing:.02em">Ирина отвечает — реплику не отправить, действия-мелочи доступны.</div>
+<div style="display:flex;gap:10px;opacity:.55">
+<input type="text" placeholder="Дождитесь ответа…" disabled style="flex:1;border:1px solid #e1e0d9;border-radius:12px;padding:0 16px;height:44px;font-family:inherit;font-size:13.5px;background:#f4f3ef;color:#898781;outline:none">
+<div style="height:44px;padding:0 24px;border-radius:12px;background:#1f7a6f;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center">Сказать</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="4d">
+<div class="dv-olabel"><a class="dv-oid" href="#4d">4d</a>Партия · режим экзамена: индикаторы скрыты панелью-заглушкой, без чипов и подсказок, без таймера</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,transparent 20%,transparent 58%,rgba(0,0,0,.22) 82%,rgba(0,0,0,.4) 100%)"></div>
+<div style="position:absolute;left:calc(50% - 150px);bottom:244px;width:300px;height:30px;border-radius:50%;background:rgba(0,0,0,.34);filter:blur(12px)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:252px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/calm.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:18px;left:18px;width:248px;display:flex;flex-direction:column;gap:9px">
+<div style="background:rgba(252,252,251,.9);backdrop-filter:blur(12px);border:1px dashed #cfccc2;border-radius:14px;padding:16px 15px;text-align:center">
+<div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#898781">режим экзамена</div>
+<div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:6px">Доверие, напряжение и терпение скрыты до разбора. Читайте Ирину по репликам и мимике.</div>
+</div>
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:12px 15px;box-shadow:0 8px 24px rgba(10,12,18,.18)">
+<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">На столе</div>
+<div style="display:flex;align-items:baseline;gap:7px;margin-top:4px"><span style="font-size:19px;font-weight:700;color:#0b0b0b">92 000 ₽</span><span style="font-size:11px;color:#898781">/ мес</span></div>
+<div style="display:flex;gap:8px;margin-top:11px">
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;background:#1f7a6f;color:#fff;font-size:12.5px;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(31,122,111,.35)" style-hover="background:#14594f">Принять</div>
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;border:1px solid #e1e0d9;color:#52514e;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.6)" style-hover="border-color:#898781">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:18px;right:18px;width:252px;display:flex;flex-direction:column;gap:9px">
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:11px 13px;box-shadow:0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #fff;box-shadow:0 0 0 2px #d5ece6;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">И</div>
+<div style="min-width:0"><div style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="font-size:10.5px;color:#898781">руководитель отдела продуктов</div></div>
+</div>
+<div style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:4px 10px;border-radius:999px;background:#f4f3ef"><span style="width:7px;height:7px;border-radius:50%;border:1.5px solid #b9b7b0;box-sizing:border-box"></span><span style="font-size:11px;color:#898781;font-style:italic">настроение скрыто</span></div>
+</div>
+<div style="display:flex;background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:11px;padding:3px;gap:2px">
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer" style-hover="background:#f4f3ef">Журнал</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer" style-hover="background:#f4f3ef">Бриф</span>
+</div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(252,252,251,.96);backdrop-filter:blur(14px);border:1px solid #e1e0d9;border-radius:18px;padding:16px 24px;box-shadow:0 18px 44px rgba(10,12,18,.32)">
+<div style="position:absolute;top:-15px;left:24px;display:flex;align-items:center;gap:8px;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:9px;padding:5px 13px;box-shadow:0 4px 12px rgba(10,12,18,.14)"><span style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина</span><span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#898781;border:1px solid #e1e0d9;border-radius:4px;padding:1px 5px">ИИ</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:10px;align-items:center;margin-top:2px">
+<div style="display:inline-flex;gap:7px;align-items:center;background:rgba(11,11,11,.035);border:1px solid #eae9e2;border-radius:999px;padding:5px 7px">
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+</div>
+<span style="flex:1"></span>
+<span style="font:10px 'IBM Plex Mono',monospace;color:#898781;letter-spacing:.08em">режим · экзамен</span>
+</div>
+<div style="font-size:16px;line-height:1.65;color:#0b0b0b;max-width:1030px">Хорошо, что пришли подготовленным. Но давайте честно: почему именно сейчас? Квартал ещё не закрыт, и мне нужен аргумент сильнее, чем «прошёл год».<span style="display:inline-block;width:2px;height:1.05em;background:#1f7a6f;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;gap:10px">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:1px solid #e1e0d9;border-radius:12px;padding:0 16px;height:44px;font-family:inherit;font-size:13.5px;background:#fff;color:#0b0b0b;outline:none;box-shadow:inset 0 1px 3px rgba(10,12,18,.05)" style-focus="border-color:#1f7a6f;box-shadow:0 0 0 3px #d5ece6">
+<div style="height:44px;padding:0 24px;border-radius:12px;background:#1f7a6f;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(31,122,111,.4)" style-hover="background:#14594f">Сказать</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="4e">
+<div class="dv-olabel"><a class="dv-oid" href="#4e">4e</a>Партия · финал: затемнение сцены, карточка «Партия завершена → Разбор»</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:calc(50% - 150px);bottom:244px;width:300px;height:30px;border-radius:50%;background:rgba(0,0,0,.34);filter:blur(12px)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:252px;width:240px;height:336px">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22)"></div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;height:210px;background:rgba(252,252,251,.96);border:1px solid #e1e0d9;border-radius:18px"></div>
+<div style="position:absolute;inset:0;background:rgba(8,14,13,.6);backdrop-filter:blur(2px)"></div>
+<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:470px;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:16px;padding:26px 30px;box-shadow:0 30px 80px rgba(0,0,0,.5)">
+<div style="font:600 9.5px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#14594f">партия завершена</div>
+<div style="font-size:21px;font-weight:700;color:#0b0b0b;margin-top:8px">Сделка: 98 000 ₽ / мес</div>
+<div style="font-size:12.5px;line-height:1.6;color:#52514e;margin-top:6px">Ирина приняла пакет: оклад + пересмотр через полгода, фиксация письмом. Отношения сохранены.</div>
+<div style="display:flex;gap:16px;margin-top:14px;padding:10px 0;border-top:1px solid #edece6;border-bottom:1px solid #edece6">
+<span style="font:11px 'IBM Plex Mono',monospace;color:#898781">14 ходов</span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:#898781">12:40</span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:#898781">доверие 71</span>
+<span style="flex:1"></span>
+<span style="font:600 11px 'IBM Plex Mono',monospace;color:#14594f">+10 000 ₽ к офферу</span>
+</div>
+<div style="display:flex;gap:10px;margin-top:16px">
+<div style="flex:1;text-align:center;padding:12px 0;border-radius:11px;background:#1f7a6f;color:#fff;font-size:13.5px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(31,122,111,.4)" style-hover="background:#14594f">Разбор партии →</div>
+<div style="padding:12px 20px;border-radius:11px;border:1px solid #e1e0d9;color:#52514e;font-size:13.5px;font-weight:600;cursor:pointer;background:#fff" style-hover="border-color:#898781">В каталог</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="4f">
+<div class="dv-olabel"><a class="dv-oid" href="#4f">4f</a>Оверлей «Журнал» (~420px): вся переписка с чипами приёмов, ремарками действий и временем ответа</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:calc(38% - 120px);bottom:252px;width:240px;height:336px">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px)"></div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;height:210px;background:rgba(252,252,251,.96);border:1px solid #e1e0d9;border-radius:18px"></div>
+<div style="position:absolute;inset:0;background:rgba(8,14,13,.45)"></div>
+<div style="position:absolute;top:0;right:0;bottom:0;width:420px;background:#fcfcfb;border-left:1px solid #e1e0d9;box-shadow:-24px 0 60px rgba(0,0,0,.35);display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid #e1e0d9">
+<span style="font-size:14px;font-weight:700;color:#0b0b0b">Журнал партии</span>
+<span style="font:10px 'IBM Plex Mono',monospace;color:#898781">14 реплик</span>
+<span style="flex:1"></span>
+<span style="font-size:16px;color:#898781;cursor:pointer;line-height:1">×</span>
+</div>
+<div style="flex:1;padding:14px 20px;display:flex;flex-direction:column;gap:11px;overflow:hidden">
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">Ирина</span><span style="font:9px 'IBM Plex Mono',monospace;color:#b9b7b0">00:41</span></div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:3px">Слушаю вас. Только давайте по существу — в 15:00 у меня следующая встреча.</div></div>
+<div style="background:#f4f3ef;border-radius:10px;padding:9px 12px"><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:11.5px;font-weight:700;color:#14594f">Вы</span><span style="font:9px 'IBM Plex Mono',monospace;color:#b9b7b0">01:02</span><span style="flex:1"></span><span style="font:9px 'IBM Plex Mono',monospace;color:#898781">ответ · 18 с</span></div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:3px">За год я взял второй продукт и закрыл два релиза без срывов. Хочу обсудить оклад.</div><div style="display:flex;gap:6px;margin-top:6px"><span style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.06em;background:#e6f1ee;color:#14594f;border-radius:5px;padding:2px 7px">аргументация</span><span style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.06em;background:#e6f1ee;color:#14594f;border-radius:5px;padding:2px 7px">+доверие</span></div></div>
+<div style="text-align:center;font-size:11px;font-style:italic;color:#898781">— вы пододвинули кофе · напряжение −6 —</div>
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">Ирина</span><span style="font:9px 'IBM Plex Mono',monospace;color:#b9b7b0">03:12</span></div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:3px">Результаты вижу, спорить не буду. Но бюджет согласован в январе, вы это знаете.</div></div>
+<div style="background:#f4f3ef;border-radius:10px;padding:9px 12px"><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:11.5px;font-weight:700;color:#14594f">Вы</span><span style="font:9px 'IBM Plex Mono',monospace;color:#b9b7b0">03:58</span><span style="flex:1"></span><span style="font:9px 'IBM Plex Mono',monospace;color:#898781">ответ · 31 с</span></div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:3px">Что для вас важнее бюджета в этом квартале? Если это стабильность команды — я помогу.</div><div style="display:flex;gap:6px;margin-top:6px"><span style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.06em;background:#e6f1ee;color:#14594f;border-radius:5px;padding:2px 7px">открытый вопрос</span></div></div>
+<div style="text-align:center;font-size:11px;font-style:italic;color:#898781">— вы записали её условия в блокнот —</div>
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">Ирина</span><span style="font:9px 'IBM Plex Mono',monospace;color:#b9b7b0">05:40</span></div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:3px">Хороший вопрос. Если честно, бюджет — не главная моя боль…</div></div>
+</div>
+<div style="padding:10px 20px;border-top:1px solid #e1e0d9;background:linear-gradient(180deg,rgba(252,252,251,0),#fcfcfb);text-align:center;font:10px 'IBM Plex Mono',monospace;color:#b9b7b0">прокрутка · вся переписка</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="4g">
+<div class="dv-olabel"><a class="dv-oid" href="#4g">4g</a>Оверлей «Бриф» (~420px): карта подготовки под рукой во время партии</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:calc(38% - 120px);bottom:252px;width:240px;height:336px">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px)"></div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;height:210px;background:rgba(252,252,251,.96);border:1px solid #e1e0d9;border-radius:18px"></div>
+<div style="position:absolute;inset:0;background:rgba(8,14,13,.45)"></div>
+<div style="position:absolute;top:0;right:0;bottom:0;width:420px;background:#fcfcfb;border-left:1px solid #e1e0d9;box-shadow:-24px 0 60px rgba(0,0,0,.35);display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid #e1e0d9">
+<span style="font-size:14px;font-weight:700;color:#0b0b0b">Карта подготовки</span>
+<span style="font:10px 'IBM Plex Mono',monospace;color:#898781">salary</span>
+<span style="flex:1"></span>
+<span style="font-size:16px;color:#898781;cursor:pointer;line-height:1">×</span>
+</div>
+<div style="flex:1;padding:16px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden">
+<div><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#14594f">Цель</div><div style="font-size:14px;font-weight:700;color:#0b0b0b;margin-top:4px">105 000 ₽ / мес · минимум 98 000</div><div style="font-size:11px;color:#898781;margin-top:2px">или понятный план пересмотра с датой</div></div>
+<div style="border-top:1px solid #edece6;padding-top:12px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#14594f">Интересы Ирины</div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:5px">— удержать вас: замена дороже повышения<br>— не создать прецедент для отдела<br>— закрыть квартал без потрясений</div></div>
+<div style="border-top:1px solid #edece6;padding-top:12px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#14594f">Ваши козыри</div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:5px">— второй продукт взят без роста штата<br>— рынок по роли: 84–96 тыс., вы выше медианы<br>— два релиза подряд без срывов</div></div>
+<div style="border-top:1px solid #edece6;padding-top:12px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#c04b3c">Красные линии</div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:5px">— не угрожать уходом без оффера на руках<br>— не сравнивать себя с коллегами по именам</div></div>
+<div style="border-top:1px solid #edece6;padding-top:12px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#14594f">Заготовка</div><div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:5px">Если «нет» по деньгам — пакет: +6 000 сейчас, пересмотр через 6 месяцев, фиксация письмом.</div></div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="4h">
+<div class="dv-olabel"><a class="dv-oid" href="#4h">4h</a>Таймер хода (свободный режим): три стадии</div>
+<div class="dv-card" style="width:430px;padding:18px 22px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:14px"><span style="display:inline-flex;align-items:center;gap:8px;font:12px 'IBM Plex Mono',monospace;color:#52514e;border:1px solid #e1e0d9;border-radius:999px;padding:6px 12px;background:#fff;flex:none">0:58<span style="width:44px;height:4px;border-radius:2px;background:#edece6;display:inline-block"><span style="display:block;width:38%;height:4px;border-radius:2px;background:#898781"></span></span></span><span style="font-size:11.5px;color:#52514e">до 75 с — нейтральный серый</span></div>
+<div style="display:flex;align-items:center;gap:14px"><span style="display:inline-flex;align-items:center;gap:8px;font:12px 'IBM Plex Mono',monospace;color:#a8551f;border:1px solid rgba(217,122,63,.55);border-radius:999px;padding:6px 12px;background:rgba(217,122,63,.12);flex:none">1:23<span style="width:44px;height:4px;border-radius:2px;background:rgba(217,122,63,.25);display:inline-block"><span style="display:block;width:58%;height:4px;border-radius:2px;background:#d97a3f"></span></span></span><span style="font-size:11.5px;color:#52514e">75–150 с — оранжевый, персонаж торопит</span></div>
+<div style="display:flex;align-items:center;gap:14px"><span style="display:inline-flex;align-items:center;gap:8px;font:12px 'IBM Plex Mono',monospace;color:#8f2f24;border:1px solid rgba(192,75,60,.6);border-radius:999px;padding:6px 12px;background:rgba(192,75,60,.13);flex:none">2:37<span style="width:44px;height:4px;border-radius:2px;background:rgba(192,75,60,.25);display:inline-block"><span style="display:block;width:92%;height:4px;border-radius:2px;background:#c04b3c"></span></span></span><span style="font-size:11.5px;color:#52514e">более 150 с — красный, терпение падает</span></div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="4i">
+<div class="dv-olabel"><a class="dv-oid" href="#4i">4i</a>Разбор (§2.4): герой-счёт, 5 компетенций, ZOPA, моменты, рекомендации, стенограмма</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;background:#f9f9f7;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif;padding-bottom:34px">
+<div style="display:flex;align-items:center;gap:12px;padding:15px 48px;border-bottom:1px solid #e1e0d9;background:#fcfcfb">
+<span style="font-size:12px;font-weight:600;color:#14594f;cursor:pointer">← Каталог</span>
+<span style="flex:1"></span>
+<span style="font:10.5px 'IBM Plex Mono',monospace;color:#898781">Пересмотр зарплаты · свободный · 12:40 · 16 авг</span>
+</div>
+<div style="padding:24px 48px 0">
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:16px;padding:22px 28px;display:flex;align-items:center;gap:30px">
+<div style="text-align:center;flex:none"><div style="font-size:58px;font-weight:700;line-height:1;color:#14594f">76</div><div style="font:10px 'IBM Plex Mono',monospace;color:#898781;margin-top:4px">из 100</div></div>
+<div style="width:1px;align-self:stretch;background:#edece6"></div>
+<div style="flex:1;min-width:0">
+<span style="display:inline-block;background:#d5ece6;color:#14594f;border-radius:999px;padding:4px 12px;font-size:11.5px;font-weight:600">уверенная сделка</span>
+<div style="font-size:18px;font-weight:700;color:#0b0b0b;margin-top:8px">Итог: 98 000 ₽ / мес — +10 000 к первому офферу</div>
+<div style="font-size:12px;line-height:1.55;color:#52514e;margin-top:4px">Пакет: оклад + пересмотр через 6 месяцев с фиксацией письмом. Отношения сохранены, доверие выросло за партию.</div>
+</div>
+<div style="display:flex;gap:22px;flex:none">
+<div><div style="font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#898781">Доверие</div><div style="font-size:17px;font-weight:700;color:#0b0b0b;margin-top:2px">71</div></div>
+<div><div style="font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#898781">Пик напряж.</div><div style="font-size:17px;font-weight:700;color:#0b0b0b;margin-top:2px">67</div></div>
+<div><div style="font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#898781">Ходы</div><div style="font-size:17px;font-weight:700;color:#0b0b0b;margin-top:2px">14</div></div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-top:16px">
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:16px;padding:18px 22px">
+<div style="font-size:12.5px;font-weight:700;color:#0b0b0b;padding-bottom:10px;border-bottom:1px solid #edece6">Компетенции</div>
+<div style="padding-top:12px;display:flex;flex-direction:column;gap:13px">
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:12px;font-weight:600;color:#0b0b0b">Подготовка</span><span style="flex:1"></span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#14594f">17/20</span></div><div style="height:6px;border-radius:3px;background:#edece6;margin-top:5px"><div style="width:85%;height:6px;border-radius:3px;background:linear-gradient(90deg,#4da296,#1f7a6f)"></div></div><div style="font-size:11px;color:#898781;margin-top:4px">Рыночная вилка 84–96 сработала как главный аргумент.</div></div>
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:12px;font-weight:600;color:#0b0b0b">Активное слушание</span><span style="flex:1"></span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#14594f">15/20</span></div><div style="height:6px;border-radius:3px;background:#edece6;margin-top:5px"><div style="width:75%;height:6px;border-radius:3px;background:linear-gradient(90deg,#4da296,#1f7a6f)"></div></div><div style="font-size:11px;color:#898781;margin-top:4px">Открытый вопрос вскрыл интерес; дважды перебили на 4-й минуте.</div></div>
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:12px;font-weight:600;color:#0b0b0b">Гибкость</span><span style="flex:1"></span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#14594f">14/20</span></div><div style="height:6px;border-radius:3px;background:#edece6;margin-top:5px"><div style="width:70%;height:6px;border-radius:3px;background:linear-gradient(90deg,#4da296,#1f7a6f)"></div></div><div style="font-size:11px;color:#898781;margin-top:4px">Пакетное предложение появилось вовремя, но вариант был один.</div></div>
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:12px;font-weight:600;color:#0b0b0b">Контроль эмоций</span><span style="flex:1"></span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#a8760c">12/20</span></div><div style="height:6px;border-radius:3px;background:#edece6;margin-top:5px"><div style="width:60%;height:6px;border-radius:3px;background:linear-gradient(90deg,#e0b45c,#d9a12b)"></div></div><div style="font-size:11px;color:#898781;margin-top:4px">Резкая формулировка на 6-й минуте: напряжение +18 за один ход.</div></div>
+<div><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:12px;font-weight:600;color:#0b0b0b">Закрепление договорённостей</span><span style="flex:1"></span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#14594f">18/20</span></div><div style="height:6px;border-radius:3px;background:#edece6;margin-top:5px"><div style="width:90%;height:6px;border-radius:3px;background:linear-gradient(90deg,#4da296,#1f7a6f)"></div></div><div style="font-size:11px;color:#898781;margin-top:4px">Фиксация письмом с датой пересмотра — образцово.</div></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:16px;padding:18px 22px">
+<div style="font-size:12.5px;font-weight:700;color:#0b0b0b">Шкала ZOPA</div>
+<div style="position:relative;height:8px;border-radius:4px;background:#edece6;margin-top:26px"><div style="position:absolute;left:26%;width:44%;height:8px;background:#d5ece6"></div><div style="position:absolute;left:26%;top:-3px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid #898781;box-sizing:border-box"></div><div style="position:absolute;left:calc(70% - 12px);top:-3px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid #1f7a6f;box-sizing:border-box"></div><div style="position:absolute;left:calc(52% - 6px);top:-3px;width:12px;height:12px;border-radius:50%;background:#14594f"></div></div>
+<div style="display:flex;justify-content:space-between;font:9.5px 'IBM Plex Mono',monospace;color:#898781;margin-top:8px"><span>88 старт Ирины</span><span style="color:#14594f;font-weight:700">98 итог</span><span>105 ваш якорь</span></div>
+<div style="font-size:11px;color:#898781;margin-top:10px;line-height:1.5">Итог лёг в зону возможного соглашения ближе к её краю — запас ещё был.</div>
+</div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:16px;padding:18px 22px">
+<div style="font-size:12.5px;font-weight:700;color:#0b0b0b;padding-bottom:8px;border-bottom:1px solid #edece6">Ключевые моменты</div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid #edece6"><span style="font:10px 'IBM Plex Mono',monospace;color:#b9b7b0;width:34px">03:12</span><span style="font:700 11px 'IBM Plex Mono',monospace;color:#14594f;background:#d5ece6;border-radius:5px;width:18px;text-align:center">+</span><span style="font-size:11.5px;line-height:1.5;color:#52514e;flex:1">Открытый вопрос вскрыл интерес: стабильность команды</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid #edece6"><span style="font:10px 'IBM Plex Mono',monospace;color:#b9b7b0;width:34px">06:04</span><span style="font:700 11px 'IBM Plex Mono',monospace;color:#8f2f24;background:#f7dcd7;border-radius:5px;width:18px;text-align:center">−</span><span style="font-size:11.5px;line-height:1.5;color:#52514e;flex:1">«Это несерьёзно» — напряжение +18, Ирина закрылась</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid #edece6"><span style="font:10px 'IBM Plex Mono',monospace;color:#b9b7b0;width:34px">09:47</span><span style="font:700 11px 'IBM Plex Mono',monospace;color:#14594f;background:#d5ece6;border-radius:5px;width:18px;text-align:center">+</span><span style="font-size:11.5px;line-height:1.5;color:#52514e;flex:1">Пауза и кофе вернули темп: напряжение −11</span></div>
+<div style="display:flex;gap:10px;align-items:baseline;padding:8px 0"><span style="font:10px 'IBM Plex Mono',monospace;color:#b9b7b0;width:34px">12:30</span><span style="font:700 11px 'IBM Plex Mono',monospace;color:#14594f;background:#d5ece6;border-radius:5px;width:18px;text-align:center">+</span><span style="font-size:11.5px;line-height:1.5;color:#52514e;flex:1">Пакет «оклад + пересмотр» — Ирина согласилась за один ход</span></div>
+</div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:16px;padding:18px 22px">
+<div style="font-size:12.5px;font-weight:700;color:#0b0b0b;padding-bottom:8px;border-bottom:1px solid #edece6">Рекомендации</div>
+<div style="padding:9px 0;border-bottom:1px solid #edece6"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">формулировки</div><div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:3px">Оценочные слова закрывают собеседника — заменяйте на вопросы: «что мешает?»</div></div>
+<div style="padding:9px 0;border-bottom:1px solid #edece6"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">варианты</div><div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:3px">Готовьте 2–3 пакета заранее: было одно предложение — торг шёл вокруг него.</div></div>
+<div style="padding:9px 0 1px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">темп</div><div style="font-size:11.5px;line-height:1.5;color:#52514e;margin-top:3px">Паузы работали на вас — используйте их до эскалации, а не после.</div></div>
+</div>
+</div>
+</div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:16px;padding:18px 22px;margin-top:16px">
+<div style="display:flex;align-items:baseline;gap:10px;padding-bottom:10px;border-bottom:1px solid #edece6"><span style="font-size:12.5px;font-weight:700;color:#0b0b0b">Стенограмма</span><span style="font:10px 'IBM Plex Mono',monospace;color:#898781">14 реплик · ремарки действий · время ответа</span><span style="flex:1"></span><span style="font-size:11px;font-weight:600;color:#14594f;border-bottom:1px dotted #1f7a6f;cursor:pointer">экспорт .txt</span></div>
+<div style="display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid #f2f1ea"><span style="font:9.5px 'IBM Plex Mono',monospace;color:#b9b7b0;width:36px">00:41</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b;width:46px">Ирина</span><span style="font-size:12px;line-height:1.5;color:#52514e;flex:1">Слушаю вас. Только давайте по существу — в 15:00 у меня следующая встреча.</span><span style="font:9.5px 'IBM Plex Mono',monospace;color:#d6d4cc;width:40px;text-align:right"></span></div>
+<div style="display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid #f2f1ea"><span style="font:9.5px 'IBM Plex Mono',monospace;color:#b9b7b0;width:36px">01:02</span><span style="font-size:11.5px;font-weight:700;color:#14594f;width:46px">Вы</span><span style="font-size:12px;line-height:1.5;color:#52514e;flex:1">За год я взял второй продукт и закрыл два релиза без срывов. Хочу обсудить оклад.</span><span style="font:9.5px 'IBM Plex Mono',monospace;color:#898781;width:40px;text-align:right">18 с</span></div>
+<div style="text-align:center;font-size:11px;font-style:italic;color:#898781;padding:7px 0;border-bottom:1px solid #f2f1ea">— вы пододвинули кофе · напряжение −6 —</div>
+<div style="display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid #f2f1ea"><span style="font:9.5px 'IBM Plex Mono',monospace;color:#b9b7b0;width:36px">03:12</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b;width:46px">Ирина</span><span style="font-size:12px;line-height:1.5;color:#52514e;flex:1">Результаты вижу, спорить не буду. Но бюджет согласован в январе, вы это знаете.</span><span style="font:9.5px 'IBM Plex Mono',monospace;color:#d6d4cc;width:40px;text-align:right"></span></div>
+<div style="display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid #f2f1ea"><span style="font:9.5px 'IBM Plex Mono',monospace;color:#b9b7b0;width:36px">03:58</span><span style="font-size:11.5px;font-weight:700;color:#14594f;width:46px">Вы</span><span style="font-size:12px;line-height:1.5;color:#52514e;flex:1">Что для вас важнее бюджета в этом квартале? Если это стабильность команды — я помогу.</span><span style="font:9.5px 'IBM Plex Mono',monospace;color:#898781;width:40px;text-align:right">31 с</span></div>
+<div style="text-align:center;font:10px 'IBM Plex Mono',monospace;color:#b9b7b0;padding-top:10px">… ещё 10 реплик</div>
+</div>
+</div>
+</div></div>
+</div>
+
+</div>
+<p class="dv-next">Дальше: «доработать экран по id» · «собрать кликабельный поток каталог → бриф → партия → разбор» · «другие сценарии (supplier / discount / rent) в этой системе»</p>
+</section>
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname"><a class="dv-oid" href="#2a">2a</a> в двух новых палитрах · подсказки без цифр-кружков (метки-теги вместо номеров)</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>Палитра «хвоя»: глубокий бирюзово-зелёный акцент, тёплые статусы приглушены</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),radial-gradient(ellipse 44% 36% at 20% 44%,rgba(196,214,214,.16),transparent 60%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:56%;top:-160px;width:430px;height:940px;transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,205,145,.13),transparent)"></div>
+<div style="position:absolute;left:110px;top:196px;width:310px;height:180px;background:rgba(240,246,244,.11);border-radius:4px;filter:blur(7px)"></div>
+<div style="position:absolute;left:930px;top:130px;width:90px;height:90px;border-radius:50%;background:rgba(255,196,130,.16);filter:blur(18px)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,transparent 20%,transparent 58%,rgba(0,0,0,.22) 82%,rgba(0,0,0,.4) 100%)"></div>
+<div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);font:10px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.5)">плейсхолдер · scenes/salary.jpg · 1920×1080</div>
+<div style="position:absolute;left:calc(50% - 150px);bottom:244px;width:300px;height:30px;border-radius:50%;background:rgba(0,0,0,.34);filter:blur(12px)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:252px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -6px 4px 12px rgba(255,205,145,.12)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -10px 6px 18px rgba(255,205,145,.10)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/calm.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:18px;left:18px;width:248px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:13px 15px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid #edece6"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Позиция</span><span style="font:10px 'IBM Plex Mono',monospace;color:#b9b7b0">12 мин</span></div>
+<div style="padding:9px 0 2px;display:flex;flex-direction:column;gap:9px">
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Доверие</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#58a05a">+4</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">62</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:62%;height:6px;border-radius:3px;background:linear-gradient(90deg,#4da296,#1f7a6f)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Напряжение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#58a05a">−2</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">34</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:34%;height:6px;border-radius:3px;background:linear-gradient(90deg,#e0b45c,#d9a12b)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Терпение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#c04b3c">−5</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">71</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:71%;height:6px;border-radius:3px;background:linear-gradient(90deg,#8bbb7d,#5f9c53)"></div></div></div>
+</div>
+<div style="margin-top:10px;padding-top:11px;border-top:1px solid #edece6">
+<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">На столе</div>
+<div style="display:flex;align-items:baseline;gap:7px;margin-top:4px"><span style="font-size:19px;font-weight:700;color:#0b0b0b">92 000 ₽</span><span style="font-size:11px;color:#898781">/ мес · оффер Ирины</span></div>
+<div style="position:relative;height:6px;border-radius:3px;background:#edece6;margin:10px 0 3px"><div style="position:absolute;left:38%;width:42%;height:6px;border-radius:3px;background:linear-gradient(90deg,#d5ece6,#1f7a6f)"></div><div style="position:absolute;left:38%;top:-2px;width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid #1f7a6f;box-sizing:border-box"></div><div style="position:absolute;left:calc(80% - 10px);top:-2px;width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid #14594f;box-sizing:border-box"></div></div>
+<div style="display:flex;justify-content:space-between;font:9.5px 'IBM Plex Mono',monospace;color:#898781"><span>92 000</span><span>ваш запрос · 105 000</span></div>
+<div style="display:flex;gap:8px;margin-top:12px">
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;background:#1f7a6f;color:#fff;font-size:12.5px;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(31,122,111,.35)" style-hover="background:#14594f">Принять</div>
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;border:1px solid #e1e0d9;color:#52514e;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.6)" style-hover="border-color:#898781">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:18px;right:18px;width:252px;display:flex;flex-direction:column;gap:9px">
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:11px 13px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #fff;box-shadow:0 0 0 2px #d5ece6;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">И</div>
+<div style="min-width:0"><div style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="font-size:10.5px;color:#898781">руководитель отдела продуктов</div></div>
+</div>
+<div style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:4px 10px;border-radius:999px;background:#f4f3ef"><span style="width:7px;height:7px;border-radius:50%;background:#898781"></span><span style="font-size:11px;color:#52514e">спокойна</span></div>
+</div>
+<div style="display:flex;background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:11px;padding:3px;gap:2px">
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer" style-hover="background:#f4f3ef">Журнал</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer" style-hover="background:#f4f3ef">Бриф</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#14594f;background:#d5ece6;border-radius:8px;cursor:pointer">Подсказки</span>
+</div>
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:11px 13px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="padding-bottom:8px;border-bottom:1px solid #edece6"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Подсказки</span></div>
+<div style="padding:9px 0;border-bottom:1px solid #edece6"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">якорь</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Не называйте цифру первым — спросите вилку бюджета.</div></div>
+<div style="padding:9px 0;border-bottom:1px solid #edece6"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">рынок</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Сошлитесь на рынок: 84–96 тыс. для вашей роли.</div></div>
+<div style="padding:9px 0 1px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#14594f">темп</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Пауза после её ответа снизит напряжение.</div></div>
+</div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(252,252,251,.96);backdrop-filter:blur(14px);border:1px solid #e1e0d9;border-radius:18px;padding:16px 24px;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 18px 44px rgba(10,12,18,.32)">
+<div style="position:absolute;top:-15px;left:24px;display:flex;align-items:center;gap:8px;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:9px;padding:5px 13px;box-shadow:0 4px 12px rgba(10,12,18,.14)"><span style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина</span><span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#898781;border:1px solid #e1e0d9;border-radius:4px;padding:1px 5px">ИИ</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:10px;align-items:center;margin-top:2px">
+<div style="display:inline-flex;gap:7px;align-items:center;background:rgba(11,11,11,.035);border:1px solid #eae9e2;border-radius:999px;padding:5px 7px">
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#1f7a6f;color:#14594f;background:#d5ece6"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="position:relative;width:38px;height:38px;border-radius:50%;border:1px solid #eae9e2;background:#fff;color:#c9c7c0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg><span style="position:absolute;right:-4px;bottom:-3px;font:500 8.5px 'IBM Plex Mono',monospace;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:999px;padding:1px 4px;color:#898781">12с</span></div>
+</div>
+<span style="flex:1"></span>
+<span style="display:inline-flex;align-items:center;gap:8px;font:12px 'IBM Plex Mono',monospace;color:#52514e;border:1px solid #e1e0d9;border-radius:999px;padding:6px 12px;background:#fff"><span style="font-size:9.5px;letter-spacing:.08em;color:#898781;font-family:'IBM Plex Sans',sans-serif;text-transform:uppercase">свободный</span>1:42<span style="width:44px;height:4px;border-radius:2px;background:#edece6;display:inline-block"><span style="display:block;width:35%;height:4px;border-radius:2px;background:#898781"></span></span></span>
+</div>
+<div style="font-size:16px;line-height:1.65;color:#0b0b0b;max-width:1030px">Я слышу вас. Но вилка бюджета согласована ещё в январе. Назовите цифру, которую считаете справедливой, — и посмотрим, что я смогу с ней сделать.<span style="display:inline-block;width:2px;height:1.05em;background:#1f7a6f;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+<span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#898781">ваш ход</span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#1f7a6f;background:#e6f1ee">Открытый вопрос <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#14594f">+довер.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#1f7a6f;background:#e6f1ee">Пауза <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#5f9c53">−напряж.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#1f7a6f;background:#e6f1ee">Якорение <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#c4703f">риск</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#1f7a6f;background:#e6f1ee">Уступка взамен <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#14594f">+прогр.</span></span>
+<span style="flex:1"></span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:#898781">ответ · 12 с</span>
+</div>
+<div style="display:flex;gap:10px">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:1px solid #e1e0d9;border-radius:12px;padding:0 16px;height:44px;font-family:inherit;font-size:13.5px;background:#fff;color:#0b0b0b;outline:none;box-shadow:inset 0 1px 3px rgba(10,12,18,.05)" style-focus="border-color:#1f7a6f;box-shadow:0 0 0 3px #d5ece6">
+<div style="height:44px;padding:0 24px;border-radius:12px;background:#1f7a6f;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(31,122,111,.4)" style-hover="background:#14594f">Сказать</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>Палитра «медь»: тёплый терракотово-медный акцент под вечерний свет сцены</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),radial-gradient(ellipse 44% 36% at 20% 44%,rgba(196,214,214,.16),transparent 60%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:56%;top:-160px;width:430px;height:940px;transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,205,145,.13),transparent)"></div>
+<div style="position:absolute;left:110px;top:196px;width:310px;height:180px;background:rgba(240,246,244,.11);border-radius:4px;filter:blur(7px)"></div>
+<div style="position:absolute;left:930px;top:130px;width:90px;height:90px;border-radius:50%;background:rgba(255,196,130,.16);filter:blur(18px)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,transparent 20%,transparent 58%,rgba(0,0,0,.22) 82%,rgba(0,0,0,.4) 100%)"></div>
+<div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);font:10px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.5)">плейсхолдер · scenes/salary.jpg · 1920×1080</div>
+<div style="position:absolute;left:calc(50% - 150px);bottom:244px;width:300px;height:30px;border-radius:50%;background:rgba(0,0,0,.34);filter:blur(12px)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:252px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -6px 4px 12px rgba(255,205,145,.12)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -10px 6px 18px rgba(255,205,145,.10)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/calm.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:18px;left:18px;width:248px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e3ddd4;border-radius:14px;padding:13px 15px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid #efe9e0"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8f8779">Позиция</span><span style="font:10px 'IBM Plex Mono',monospace;color:#bcb4a6">12 мин</span></div>
+<div style="padding:9px 0 2px;display:flex;flex-direction:column;gap:9px">
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#57503f">Доверие</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#6f9a58">+4</span><span style="font-size:11.5px;font-weight:700;color:#181410">62</span></div><div style="height:6px;border-radius:3px;background:#efe9e0"><div style="width:62%;height:6px;border-radius:3px;background:linear-gradient(90deg,#c98457,#a9572e)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#57503f">Напряжение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#6f9a58">−2</span><span style="font-size:11.5px;font-weight:700;color:#181410">34</span></div><div style="height:6px;border-radius:3px;background:#efe9e0"><div style="width:34%;height:6px;border-radius:3px;background:linear-gradient(90deg,#e0b45c,#d9a12b)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#57503f">Терпение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#c04b3c">−5</span><span style="font-size:11.5px;font-weight:700;color:#181410">71</span></div><div style="height:6px;border-radius:3px;background:#efe9e0"><div style="width:71%;height:6px;border-radius:3px;background:linear-gradient(90deg,#9ab97f,#6f9a58)"></div></div></div>
+</div>
+<div style="margin-top:10px;padding-top:11px;border-top:1px solid #efe9e0">
+<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8f8779">На столе</div>
+<div style="display:flex;align-items:baseline;gap:7px;margin-top:4px"><span style="font-size:19px;font-weight:700;color:#181410">92 000 ₽</span><span style="font-size:11px;color:#8f8779">/ мес · оффер Ирины</span></div>
+<div style="position:relative;height:6px;border-radius:3px;background:#efe9e0;margin:10px 0 3px"><div style="position:absolute;left:38%;width:42%;height:6px;border-radius:3px;background:linear-gradient(90deg,#f2dcce,#a9572e)"></div><div style="position:absolute;left:38%;top:-2px;width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid #a9572e;box-sizing:border-box"></div><div style="position:absolute;left:calc(80% - 10px);top:-2px;width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid #86401f;box-sizing:border-box"></div></div>
+<div style="display:flex;justify-content:space-between;font:9.5px 'IBM Plex Mono',monospace;color:#8f8779"><span>92 000</span><span>ваш запрос · 105 000</span></div>
+<div style="display:flex;gap:8px;margin-top:12px">
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;background:#a9572e;color:#fff;font-size:12.5px;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(169,87,46,.35)" style-hover="background:#86401f">Принять</div>
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;border:1px solid #e3ddd4;color:#57503f;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.6)" style-hover="border-color:#8f8779">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:18px;right:18px;width:252px;display:flex;flex-direction:column;gap:9px">
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e3ddd4;border-radius:14px;padding:11px 13px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #fff;box-shadow:0 0 0 2px #f2dcce;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#8f8779">И</div>
+<div style="min-width:0"><div style="font-size:13px;font-weight:700;color:#181410">Ирина Волкова</div><div style="font-size:10.5px;color:#8f8779">руководитель отдела продуктов</div></div>
+</div>
+<div style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:4px 10px;border-radius:999px;background:#f5f1e9"><span style="width:7px;height:7px;border-radius:50%;background:#8f8779"></span><span style="font-size:11px;color:#57503f">спокойна</span></div>
+</div>
+<div style="display:flex;background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e3ddd4;border-radius:11px;padding:3px;gap:2px">
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#57503f;border-radius:8px;cursor:pointer" style-hover="background:#f5f1e9">Журнал</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#57503f;border-radius:8px;cursor:pointer" style-hover="background:#f5f1e9">Бриф</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#86401f;background:#f2dcce;border-radius:8px;cursor:pointer">Подсказки</span>
+</div>
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e3ddd4;border-radius:14px;padding:11px 13px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="padding-bottom:8px;border-bottom:1px solid #efe9e0"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8f8779">Подсказки</span></div>
+<div style="padding:9px 0;border-bottom:1px solid #efe9e0"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#86401f">якорь</div><div style="font-size:11.5px;line-height:1.45;color:#57503f;margin-top:3px">Не называйте цифру первым — спросите вилку бюджета.</div></div>
+<div style="padding:9px 0;border-bottom:1px solid #efe9e0"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#86401f">рынок</div><div style="font-size:11.5px;line-height:1.45;color:#57503f;margin-top:3px">Сошлитесь на рынок: 84–96 тыс. для вашей роли.</div></div>
+<div style="padding:9px 0 1px"><div style="font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#86401f">темп</div><div style="font-size:11.5px;line-height:1.45;color:#57503f;margin-top:3px">Пауза после её ответа снизит напряжение.</div></div>
+</div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(253,251,247,.96);backdrop-filter:blur(14px);border:1px solid #e3ddd4;border-radius:18px;padding:16px 24px;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 18px 44px rgba(10,12,18,.32)">
+<div style="position:absolute;top:-15px;left:24px;display:flex;align-items:center;gap:8px;background:#fdfbf7;border:1px solid #e3ddd4;border-radius:9px;padding:5px 13px;box-shadow:0 4px 12px rgba(10,12,18,.14)"><span style="font-size:13px;font-weight:700;color:#181410">Ирина</span><span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#8f8779;border:1px solid #e3ddd4;border-radius:4px;padding:1px 5px">ИИ</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:10px;align-items:center;margin-top:2px">
+<div style="display:inline-flex;gap:7px;align-items:center;background:rgba(24,20,16,.04);border:1px solid #ece5da;border-radius:999px;padding:5px 7px">
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e3ddd4;background:#fff;color:#57503f;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#a9572e;color:#86401f;background:#f2dcce"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e3ddd4;background:#fff;color:#57503f;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#a9572e;color:#86401f;background:#f2dcce"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e3ddd4;background:#fff;color:#57503f;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#a9572e;color:#86401f;background:#f2dcce"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e3ddd4;background:#fff;color:#57503f;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#a9572e;color:#86401f;background:#f2dcce"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e3ddd4;background:#fff;color:#57503f;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#a9572e;color:#86401f;background:#f2dcce"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="position:relative;width:38px;height:38px;border-radius:50%;border:1px solid #ece5da;background:#fff;color:#cdc5b8;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg><span style="position:absolute;right:-4px;bottom:-3px;font:500 8.5px 'IBM Plex Mono',monospace;background:#fdfbf7;border:1px solid #e3ddd4;border-radius:999px;padding:1px 4px;color:#8f8779">12с</span></div>
+</div>
+<span style="flex:1"></span>
+<span style="display:inline-flex;align-items:center;gap:8px;font:12px 'IBM Plex Mono',monospace;color:#57503f;border:1px solid #e3ddd4;border-radius:999px;padding:6px 12px;background:#fff"><span style="font-size:9.5px;letter-spacing:.08em;color:#8f8779;font-family:'IBM Plex Sans',sans-serif;text-transform:uppercase">свободный</span>1:42<span style="width:44px;height:4px;border-radius:2px;background:#efe9e0;display:inline-block"><span style="display:block;width:35%;height:4px;border-radius:2px;background:#8f8779"></span></span></span>
+</div>
+<div style="font-size:16px;line-height:1.65;color:#181410;max-width:1030px">Я слышу вас. Но вилка бюджета согласована ещё в январе. Назовите цифру, которую считаете справедливой, — и посмотрим, что я смогу с ней сделать.<span style="display:inline-block;width:2px;height:1.05em;background:#a9572e;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+<span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8f8779">ваш ход</span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f5f1e9;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#181410;cursor:pointer" style-hover="border-color:#a9572e;background:#f7ece3">Открытый вопрос <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#86401f">+довер.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f5f1e9;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#181410;cursor:pointer" style-hover="border-color:#a9572e;background:#f7ece3">Пауза <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#6f9a58">−напряж.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f5f1e9;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#181410;cursor:pointer" style-hover="border-color:#a9572e;background:#f7ece3">Якорение <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#c04b3c">риск</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f5f1e9;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#181410;cursor:pointer" style-hover="border-color:#a9572e;background:#f7ece3">Уступка взамен <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#86401f">+прогр.</span></span>
+<span style="flex:1"></span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:#8f8779">ответ · 12 с</span>
+</div>
+<div style="display:flex;gap:10px">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:1px solid #e3ddd4;border-radius:12px;padding:0 16px;height:44px;font-family:inherit;font-size:13.5px;background:#fff;color:#181410;outline:none;box-shadow:inset 0 1px 3px rgba(10,12,18,.05)" style-focus="border-color:#a9572e;box-shadow:0 0 0 3px #f2dcce">
+<div style="height:44px;padding:0 24px;border-radius:12px;background:#a9572e;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(169,87,46,.4)" style-hover="background:#86401f">Сказать</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+</div>
+<p class="dv-next">Дальше: «берём <a class="dv-oid" href="#3a">3a</a> (или <a class="dv-oid" href="#3b">3b</a>) как основную» · «другую палитру — назовите тон» · «показать состояния и остальные экраны в выбранной палитре»</p>
+</section>
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Доработка <a class="dv-oid" href="#1a">1a</a> — та же светлая палитра §1, больше глубины, света и порядка в HUD</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Слои и свет: имя-ярлык на окне, лоток действий, сгруппированный HUD, ZOPA-полоска, тень под персонажем</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),radial-gradient(ellipse 44% 36% at 20% 44%,rgba(196,214,214,.16),transparent 60%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:56%;top:-160px;width:430px;height:940px;transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,205,145,.13),transparent)"></div>
+<div style="position:absolute;left:110px;top:196px;width:310px;height:180px;background:rgba(240,246,244,.11);border-radius:4px;filter:blur(7px)"></div>
+<div style="position:absolute;left:930px;top:130px;width:90px;height:90px;border-radius:50%;background:rgba(255,196,130,.16);filter:blur(18px)"></div>
+<div style="position:absolute;left:1080px;top:250px;width:56px;height:56px;border-radius:50%;background:rgba(214,228,224,.14);filter:blur(14px)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,transparent 20%,transparent 58%,rgba(0,0,0,.22) 82%,rgba(0,0,0,.4) 100%)"></div>
+<div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);font:10px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.5)">плейсхолдер · scenes/salary.jpg · 1920×1080</div>
+<div style="position:absolute;left:calc(50% - 150px);bottom:244px;width:300px;height:30px;border-radius:50%;background:rgba(0,0,0,.34);filter:blur(12px)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:252px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -6px 4px 12px rgba(255,205,145,.12)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -10px 6px 18px rgba(255,205,145,.10)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/calm.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:18px;left:18px;width:248px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:13px 15px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid #edece6"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Позиция</span><span style="font:10px 'IBM Plex Mono',monospace;color:#b9b7b0">12 мин</span></div>
+<div style="padding:9px 0 2px;display:flex;flex-direction:column;gap:9px">
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Доверие</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#0ca30c">+4</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">62</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:62%;height:6px;border-radius:3px;background:linear-gradient(90deg,#5a97e0,#2a78d6)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Напряжение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#0ca30c">−2</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">34</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:34%;height:6px;border-radius:3px;background:linear-gradient(90deg,#fcc95e,#fab219)"></div></div></div>
+<div><div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span style="font-size:11px;color:#52514e">Терпение</span><span style="flex:1"></span><span style="font:600 9.5px 'IBM Plex Mono',monospace;color:#d03b3b">−5</span><span style="font-size:11.5px;font-weight:700;color:#0b0b0b">71</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:71%;height:6px;border-radius:3px;background:linear-gradient(90deg,#4fc44f,#0ca30c)"></div></div></div>
+</div>
+<div style="margin-top:10px;padding-top:11px;border-top:1px solid #edece6">
+<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">На столе</div>
+<div style="display:flex;align-items:baseline;gap:7px;margin-top:4px"><span style="font-size:19px;font-weight:700;color:#0b0b0b">92 000 ₽</span><span style="font-size:11px;color:#898781">/ мес · оффер Ирины</span></div>
+<div style="position:relative;height:6px;border-radius:3px;background:#edece6;margin:10px 0 3px"><div style="position:absolute;left:38%;width:42%;height:6px;border-radius:3px;background:linear-gradient(90deg,#cde2fb,#2a78d6)"></div><div style="position:absolute;left:38%;top:-2px;width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid #2a78d6;box-sizing:border-box"></div><div style="position:absolute;left:calc(80% - 10px);top:-2px;width:10px;height:10px;border-radius:50%;background:#fff;border:2.5px solid #1c5cab;box-sizing:border-box"></div></div>
+<div style="display:flex;justify-content:space-between;font:9.5px 'IBM Plex Mono',monospace;color:#898781"><span>92 000</span><span>ваш запрос · 105 000</span></div>
+<div style="display:flex;gap:8px;margin-top:12px">
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;background:#2a78d6;color:#fff;font-size:12.5px;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(42,120,214,.35)" style-hover="background:#1c5cab">Принять</div>
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:9px;border:1px solid #e1e0d9;color:#52514e;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.6)" style-hover="border-color:#898781">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:18px;right:18px;width:252px;display:flex;flex-direction:column;gap:9px">
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:11px 13px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #fff;box-shadow:0 0 0 2px #cde2fb;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">И</div>
+<div style="min-width:0"><div style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="font-size:10.5px;color:#898781">руководитель отдела продуктов</div></div>
+</div>
+<div style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:4px 10px;border-radius:999px;background:#f4f3ef"><span style="width:7px;height:7px;border-radius:50%;background:#898781"></span><span style="font-size:11px;color:#52514e">спокойна</span></div>
+</div>
+<div style="display:flex;background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:11px;padding:3px;gap:2px">
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer" style-hover="background:#f4f3ef">Журнал</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;border-radius:8px;cursor:pointer" style-hover="background:#f4f3ef">Бриф</span>
+<span style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#1c5cab;background:#cde2fb;border-radius:8px;cursor:pointer">Подсказки</span>
+</div>
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:11px 13px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 8px 24px rgba(10,12,18,.18)">
+<div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:8px;border-bottom:1px solid #edece6"><span style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">Подсказки</span><span style="font:600 10px 'IBM Plex Mono',monospace;color:#1c5cab;background:#cde2fb;border-radius:999px;padding:1px 7px">3</span></div>
+<div style="display:flex;gap:9px;padding:9px 0;border-bottom:1px solid #edece6"><span style="flex:none;width:17px;height:17px;border-radius:50%;background:#cde2fb;color:#1c5cab;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">1</span><span style="font-size:11.5px;line-height:1.45;color:#52514e">Не называйте цифру первым — спросите вилку бюджета.</span></div>
+<div style="display:flex;gap:9px;padding:9px 0;border-bottom:1px solid #edece6"><span style="flex:none;width:17px;height:17px;border-radius:50%;background:#cde2fb;color:#1c5cab;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">2</span><span style="font-size:11.5px;line-height:1.45;color:#52514e">Сошлитесь на рынок: 84–96 тыс. для вашей роли.</span></div>
+<div style="display:flex;gap:9px;padding:9px 0 1px"><span style="flex:none;width:17px;height:17px;border-radius:50%;background:#cde2fb;color:#1c5cab;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center">3</span><span style="font-size:11.5px;line-height:1.45;color:#52514e">Пауза после её ответа снизит напряжение.</span></div>
+</div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(252,252,251,.96);backdrop-filter:blur(14px);border:1px solid #e1e0d9;border-radius:18px;padding:16px 24px;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 18px 44px rgba(10,12,18,.32)">
+<div style="position:absolute;top:-15px;left:24px;display:flex;align-items:center;gap:8px;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:9px;padding:5px 13px;box-shadow:0 4px 12px rgba(10,12,18,.14)"><span style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина</span><span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#898781;border:1px solid #e1e0d9;border-radius:4px;padding:1px 5px">ИИ</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:10px;align-items:center;margin-top:2px">
+<div style="display:inline-flex;gap:7px;align-items:center;background:rgba(11,11,11,.035);border:1px solid #eae9e2;border-radius:999px;padding:5px 7px">
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 3px rgba(10,12,18,.08)" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="position:relative;width:38px;height:38px;border-radius:50%;border:1px solid #eae9e2;background:#fff;color:#c9c7c0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg><span style="position:absolute;right:-4px;bottom:-3px;font:500 8.5px 'IBM Plex Mono',monospace;background:#fcfcfb;border:1px solid #e1e0d9;border-radius:999px;padding:1px 4px;color:#898781">12с</span></div>
+</div>
+<span style="flex:1"></span>
+<span style="display:inline-flex;align-items:center;gap:8px;font:12px 'IBM Plex Mono',monospace;color:#52514e;border:1px solid #e1e0d9;border-radius:999px;padding:6px 12px;background:#fff"><span style="font-size:9.5px;letter-spacing:.08em;color:#898781;font-family:'IBM Plex Sans',sans-serif;text-transform:uppercase">свободный</span>1:42<span style="width:44px;height:4px;border-radius:2px;background:#edece6;display:inline-block"><span style="display:block;width:35%;height:4px;border-radius:2px;background:#898781"></span></span></span>
+</div>
+<div style="font-size:16px;line-height:1.65;color:#0b0b0b;max-width:1030px">Я слышу вас. Но вилка бюджета согласована ещё в январе. Назовите цифру, которую считаете справедливой, — и посмотрим, что я смогу с ней сделать.<span style="display:inline-block;width:2px;height:1.05em;background:#2a78d6;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+<span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#898781">ваш ход</span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#2a78d6;background:#e9f1fc">Открытый вопрос <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#1c5cab">+довер.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#2a78d6;background:#e9f1fc">Пауза <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#0ca30c">−напряж.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#2a78d6;background:#e9f1fc">Якорение <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#ec835a">риск</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#2a78d6;background:#e9f1fc">Уступка взамен <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#1c5cab">+прогр.</span></span>
+<span style="flex:1"></span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:#898781">ответ · 12 с</span>
+</div>
+<div style="display:flex;gap:10px">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:1px solid #e1e0d9;border-radius:12px;padding:0 16px;height:44px;font-family:inherit;font-size:13.5px;background:#fff;color:#0b0b0b;outline:none;box-shadow:inset 0 1px 3px rgba(10,12,18,.05)" style-focus="border-color:#2a78d6;box-shadow:0 0 0 3px #cde2fb">
+<div style="height:44px;padding:0 24px;border-radius:12px;background:#2a78d6;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(42,120,214,.4)" style-hover="background:#1c5cab">Сказать</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Другая компоновка: статус-лента сверху, действия и таймер в шапке окна, «на столе» отдельной планкой, подсказки свёрнуты</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 34%,rgba(255,186,118,.3),transparent 62%),radial-gradient(ellipse 44% 36% at 20% 44%,rgba(196,214,214,.16),transparent 60%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#232c31 0%,#3b474b 32%,#68725f 55%,#414743 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:56%;top:-160px;width:430px;height:940px;transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,205,145,.13),transparent)"></div>
+<div style="position:absolute;left:110px;top:196px;width:310px;height:180px;background:rgba(240,246,244,.11);border-radius:4px;filter:blur(7px)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,transparent 20%,transparent 58%,rgba(0,0,0,.22) 82%,rgba(0,0,0,.4) 100%)"></div>
+<div style="position:absolute;top:76px;left:50%;transform:translateX(-50%);font:10px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.5)">плейсхолдер · scenes/salary.jpg · 1920×1080</div>
+<div style="position:absolute;left:calc(50% - 150px);bottom:236px;width:300px;height:30px;border-radius:50%;background:rgba(0,0,0,.34);filter:blur(12px)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:244px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -6px 4px 12px rgba(255,205,145,.12)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.7) 0 9px,rgba(22,28,34,.58) 9px 18px);border:1px solid rgba(255,224,180,.22);box-shadow:inset -10px 6px 18px rgba(255,205,145,.10)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/calm.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:16px;left:16px;display:flex;gap:8px">
+<div style="width:118px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:12px;padding:9px 12px;box-shadow:0 6px 18px rgba(10,12,18,.16)"><div style="font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#898781">Доверие</div><div style="font-size:17px;font-weight:700;color:#0b0b0b;margin:1px 0 5px">62</div><div style="height:4px;border-radius:2px;background:#edece6"><div style="width:62%;height:4px;border-radius:2px;background:#2a78d6"></div></div></div>
+<div style="width:118px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:12px;padding:9px 12px;box-shadow:0 6px 18px rgba(10,12,18,.16)"><div style="font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#898781">Напряжение</div><div style="font-size:17px;font-weight:700;color:#0b0b0b;margin:1px 0 5px">34</div><div style="height:4px;border-radius:2px;background:#edece6"><div style="width:34%;height:4px;border-radius:2px;background:#fab219"></div></div></div>
+<div style="width:118px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:12px;padding:9px 12px;box-shadow:0 6px 18px rgba(10,12,18,.16)"><div style="font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#898781">Терпение</div><div style="font-size:17px;font-weight:700;color:#0b0b0b;margin:1px 0 5px">71</div><div style="height:4px;border-radius:2px;background:#edece6"><div style="width:71%;height:4px;border-radius:2px;background:#0ca30c"></div></div></div>
+</div>
+<div style="position:absolute;top:16px;right:16px;display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+<div style="background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:12px;padding:9px 12px;display:flex;gap:10px;align-items:center;box-shadow:0 6px 18px rgba(10,12,18,.16)">
+<div style="width:36px;height:36px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #fff;box-shadow:0 0 0 2px #cde2fb;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#898781">И</div>
+<div><div style="font-size:12.5px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="display:flex;align-items:center;gap:5px;margin-top:2px"><span style="width:6px;height:6px;border-radius:50%;background:#898781"></span><span style="font-size:10.5px;color:#52514e">спокойна</span></div></div>
+</div>
+<div style="display:flex;gap:6px">
+<span style="padding:6px 12px;font-size:11px;font-weight:600;color:#52514e;background:rgba(252,252,251,.92);backdrop-filter:blur(8px);border:1px solid #e1e0d9;border-radius:999px;cursor:pointer" style-hover="border-color:#898781">Журнал</span>
+<span style="padding:6px 12px;font-size:11px;font-weight:600;color:#52514e;background:rgba(252,252,251,.92);backdrop-filter:blur(8px);border:1px solid #e1e0d9;border-radius:999px;cursor:pointer" style-hover="border-color:#898781">Бриф</span>
+<span style="display:inline-flex;align-items:center;gap:6px;padding:6px 12px;font-size:11px;font-weight:600;color:#1c5cab;background:#cde2fb;border:1px solid #cde2fb;border-radius:999px;cursor:pointer">Подсказки<span style="font:600 9.5px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:0 5px">3</span></span>
+</div>
+</div>
+<div style="position:absolute;left:20px;bottom:268px;display:flex;align-items:center;gap:12px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:12px;padding:9px 14px;box-shadow:0 8px 24px rgba(10,12,18,.2)">
+<div><div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#898781">На столе</div><div style="display:flex;align-items:baseline;gap:6px"><span style="font-size:16px;font-weight:700;color:#0b0b0b">92 000 ₽</span><span style="font-size:10.5px;color:#898781">/ мес</span></div></div>
+<div style="width:1px;height:30px;background:#e1e0d9"></div>
+<div style="padding:7px 16px;border-radius:8px;background:#2a78d6;color:#fff;font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 2px 6px rgba(42,120,214,.35)" style-hover="background:#1c5cab">Принять</div>
+<div style="padding:7px 16px;border-radius:8px;border:1px solid #e1e0d9;color:#52514e;font-size:12px;font-weight:600;cursor:pointer;background:rgba(255,255,255,.6)" style-hover="border-color:#898781">Выйти</div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(252,252,251,.96);backdrop-filter:blur(14px);border:1px solid #e1e0d9;border-radius:18px;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 18px 44px rgba(10,12,18,.32);overflow:hidden">
+<div style="display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(11,11,11,.028);border-bottom:1px solid #edece6">
+<span style="font-size:13.5px;font-weight:700;color:#0b0b0b">Ирина</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#898781;border:1px solid #e1e0d9;border-radius:4px;padding:1px 5px">ИИ</span>
+<span style="flex:1"></span>
+<div style="width:32px;height:32px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab"><svg viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:32px;height:32px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab"><svg viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:32px;height:32px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab"><svg viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:32px;height:32px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab"><svg viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:32px;height:32px;border-radius:50%;border:1px solid #e1e0d9;background:#fff;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab"><svg viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:32px;height:32px;border-radius:50%;border:1px solid #eae9e2;background:#fff;color:#c9c7c0;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+<div style="width:1px;height:22px;background:#e1e0d9;margin:0 4px"></div>
+<span style="display:inline-flex;align-items:center;gap:7px;font:11.5px 'IBM Plex Mono',monospace;color:#52514e"><span style="width:7px;height:7px;border-radius:50%;background:#898781"></span>1:42</span>
+</div>
+<div style="padding:14px 22px 16px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:16px;line-height:1.65;color:#0b0b0b;max-width:1030px">Я слышу вас. Но вилка бюджета согласована ещё в январе. Назовите цифру, которую считаете справедливой, — и посмотрим, что я смогу с ней сделать.<span style="display:inline-block;width:2px;height:1.05em;background:#2a78d6;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+<span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#898781">ваш ход</span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#2a78d6;background:#e9f1fc">Открытый вопрос <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#1c5cab">+довер.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#2a78d6;background:#e9f1fc">Пауза <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#0ca30c">−напряж.</span></span>
+<span style="display:inline-flex;align-items:center;gap:7px;background:#f4f3ef;border:1px solid transparent;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:500;color:#0b0b0b;cursor:pointer" style-hover="border-color:#2a78d6;background:#e9f1fc">Якорение <span style="font:600 10px 'IBM Plex Mono',monospace;background:#fff;border-radius:999px;padding:1px 6px;color:#ec835a">риск</span></span>
+<span style="flex:1"></span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:#898781">ответ · 12 с</span>
+</div>
+<div style="display:flex;gap:10px">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:1px solid #e1e0d9;border-radius:12px;padding:0 16px;height:44px;font-family:inherit;font-size:13.5px;background:#fff;color:#0b0b0b;outline:none;box-shadow:inset 0 1px 3px rgba(10,12,18,.05)" style-focus="border-color:#2a78d6;box-shadow:0 0 0 3px #cde2fb">
+<div style="height:44px;padding:0 24px;border-radius:12px;background:#2a78d6;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(42,120,214,.4)" style-hover="background:#1c5cab">Сказать</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+
+</div>
+<p class="dv-next">Дальше: «взять <a class="dv-oid" href="#2a">2a</a> целиком» · «шапку окна из <a class="dv-oid" href="#2b">2b</a> в <a class="dv-oid" href="#2a">2a</a>» · «показать состояния (событие · финал · экзамен) для 2a»</p>
+</section>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Экран партии (§2.3), сценарий salary · три подачи VN-окна и HUD + набор иконок действий</span></div>
+<p style="max-width:820px;margin:0 0 20px;font-size:11.5px;line-height:1.55;color:rgba(0,0,0,.55)">Допущения: растровые арты не генерирую — сцена и спрайт здесь CSS-плейсхолдеры по контракту §4, пути подписаны прямо в макетах. Все варианты — десктоп 1280×720, состояние «ход игрока». <a class="dv-oid" href="#1a">1a</a> держит палитру §1 буквально (светлое стекло); <a class="dv-oid" href="#1b">1b</a> — согласуемое отклонение: тёмное стекло, сцена главнее, показано событие и оранжевый таймер; <a class="dv-oid" href="#1c">1c</a> — «деловое досье» с фирменной парой PT Serif + IBM Plex Sans, режим обучения. Иконки <a class="dv-oid" href="#1d">1d</a> подходят любому варианту.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Светлая, по спецификации · матовое стекло, свободный режим, персонаж спокоен</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 36%,rgba(255,186,118,.26),transparent 62%),radial-gradient(ellipse 44% 36% at 20% 44%,rgba(196,214,214,.14),transparent 60%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#242c30 0%,#3a4649 34%,#636e60 56%,#3e4441 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:110px;top:200px;width:310px;height:180px;background:rgba(240,246,244,.10);border-radius:4px;filter:blur(7px)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.20) 82%,rgba(0,0,0,.38) 100%)"></div>
+<div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);font:10px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.5)">плейсхолдер · scenes/salary.jpg · 1920×1080</div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:252px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(22,28,34,.68) 0 9px,rgba(22,28,34,.56) 9px 18px);border:1px solid rgba(255,255,255,.08)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(22,28,34,.68) 0 9px,rgba(22,28,34,.56) 9px 18px);border:1px solid rgba(255,255,255,.08)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/calm.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:18px;left:18px;width:238px;display:flex;flex-direction:column;gap:10px">
+<div style="background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:9px">
+<div><div style="display:flex;justify-content:space-between;font-size:11px;color:#52514e;margin-bottom:4px"><span>Доверие</span><span style="font-weight:600;color:#0b0b0b">62</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:62%;height:6px;border-radius:3px;background:#2a78d6"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:11px;color:#52514e;margin-bottom:4px"><span>Напряжение</span><span style="font-weight:600;color:#0b0b0b">34</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:34%;height:6px;border-radius:3px;background:#fab219"></div></div></div>
+<div><div style="display:flex;justify-content:space-between;font-size:11px;color:#52514e;margin-bottom:4px"><span>Терпение</span><span style="font-weight:600;color:#0b0b0b">71</span></div><div style="height:6px;border-radius:3px;background:#edece6"><div style="width:71%;height:6px;border-radius:3px;background:#0ca30c"></div></div></div>
+</div>
+<div style="background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:12px;padding:12px 14px">
+<div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#898781">На столе</div>
+<div style="font-size:17px;font-weight:700;color:#0b0b0b;margin-top:3px">92 000 ₽ / мес</div>
+<div style="font-size:11px;color:#898781;margin-top:2px">оффер Ирины · ваш запрос 105 000</div>
+<div style="display:flex;gap:8px;margin-top:10px">
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:8px;background:#2a78d6;color:#fff;font-size:12.5px;font-weight:600;cursor:pointer" style-hover="background:#1c5cab">Принять</div>
+<div style="flex:1;text-align:center;padding:8px 0;border-radius:8px;border:1px solid #e1e0d9;color:#52514e;font-size:12.5px;font-weight:600;cursor:pointer;background:rgba(252,252,251,.6)" style-hover="border-color:#898781">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:18px;right:18px;width:248px;display:flex;flex-direction:column;gap:10px">
+<div style="background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:center">
+<div style="width:38px;height:38px;border-radius:50%;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #e1e0d9;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#898781">И</div>
+<div style="min-width:0"><div style="font-size:13px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="font-size:10.5px;color:#898781">руководитель отдела продуктов</div><div style="display:flex;align-items:center;gap:5px;margin-top:4px"><span style="width:7px;height:7px;border-radius:50%;background:#898781"></span><span style="font-size:11px;color:#52514e">спокойна</span></div></div>
+</div>
+<div style="display:flex;gap:6px">
+<div style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;background:rgba(252,252,251,.88);backdrop-filter:blur(8px);border:1px solid #e1e0d9;border-radius:8px;cursor:pointer">Журнал</div>
+<div style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#52514e;background:rgba(252,252,251,.88);backdrop-filter:blur(8px);border:1px solid #e1e0d9;border-radius:8px;cursor:pointer">Бриф</div>
+<div style="flex:1;text-align:center;padding:6px 0;font-size:11px;font-weight:600;color:#1c5cab;background:#cde2fb;border:1px solid #cde2fb;border-radius:8px;cursor:pointer">Подсказки</div>
+</div>
+<div style="background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:10px;padding:9px 11px"><div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1c5cab">Подсказка 1</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Не называйте цифру первым — спросите вилку бюджета.</div></div>
+<div style="background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:10px;padding:9px 11px"><div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1c5cab">Подсказка 2</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Сошлитесь на рынок: 84–96 тыс. для вашей роли.</div></div>
+<div style="background:rgba(252,252,251,.92);backdrop-filter:blur(10px);border:1px solid #e1e0d9;border-radius:10px;padding:9px 11px"><div style="font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1c5cab">Подсказка 3</div><div style="font-size:11.5px;line-height:1.45;color:#52514e;margin-top:3px">Пауза после её ответа снизит напряжение.</div></div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(252,252,251,.94);backdrop-filter:blur(12px);border:1px solid #e1e0d9;border-radius:14px;padding:13px 22px 15px;box-shadow:0 10px 34px rgba(10,12,18,.28);display:flex;flex-direction:column;gap:9px">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab;background:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35" title="кулдаун"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+</div>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font-size:13.5px;font-weight:700;color:#0b0b0b">Ирина</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:#898781;border:1px solid #e1e0d9;border-radius:4px;padding:1px 5px">ИИ</span>
+<span style="flex:1"></span>
+<span style="font:12px 'IBM Plex Mono',monospace;color:#52514e;border:1px solid #e1e0d9;border-radius:999px;padding:3px 10px;background:#fcfcfb">1:42 · свободный</span>
+</div>
+<div style="font-size:15.5px;line-height:1.6;color:#0b0b0b;max-width:1000px">Я слышу вас. Но вилка бюджета согласована ещё в январе. Назовите цифру, которую считаете справедливой, — и посмотрим, что я смогу с ней сделать.<span style="display:inline-block;width:2px;height:1.05em;background:#2a78d6;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+<span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#898781">ваш ход</span>
+<span style="border:1px solid #e1e0d9;border-radius:999px;padding:5px 12px;font-size:12px;color:#52514e;background:#fcfcfb;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab">Открытый вопрос <span style="font-size:10.5px;font-weight:600;color:#1c5cab">+доверие</span></span>
+<span style="border:1px solid #e1e0d9;border-radius:999px;padding:5px 12px;font-size:12px;color:#52514e;background:#fcfcfb;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab">Пауза <span style="font-size:10.5px;font-weight:600;color:#0ca30c">−напряжение</span></span>
+<span style="border:1px solid #e1e0d9;border-radius:999px;padding:5px 12px;font-size:12px;color:#52514e;background:#fcfcfb;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab">Якорение <span style="font-size:10.5px;font-weight:600;color:#ec835a">риск</span></span>
+<span style="border:1px solid #e1e0d9;border-radius:999px;padding:5px 12px;font-size:12px;color:#52514e;background:#fcfcfb;cursor:pointer" style-hover="border-color:#2a78d6;color:#1c5cab">Уступка взамен <span style="font-size:10.5px;font-weight:600;color:#1c5cab">+прогресс</span></span>
+<span style="flex:1"></span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:#898781">ответ · 12 с</span>
+</div>
+<div style="display:flex;gap:10px">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:1px solid #e1e0d9;border-radius:10px;padding:0 14px;height:42px;font-family:inherit;font-size:13.5px;background:#fff;color:#0b0b0b;outline:none">
+<div style="height:42px;padding:0 22px;border-radius:10px;background:#2a78d6;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center;cursor:pointer" style-hover="background:#1c5cab">Сказать</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Кино-тёмная · сцена главнее, HUD-пилюли, событие + оранжевый таймер, персонаж напряжён</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 36%,rgba(255,186,118,.28),transparent 62%),radial-gradient(ellipse 44% 36% at 20% 44%,rgba(196,214,214,.14),transparent 60%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#242c30 0%,#3a4649 34%,#636e60 56%,#3e4441 76%,#2b2f2d 100%)"></div>
+<div style="position:absolute;left:110px;top:200px;width:310px;height:180px;background:rgba(240,246,244,.10);border-radius:4px;filter:blur(7px)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,transparent 22%,transparent 58%,rgba(0,0,0,.30) 84%,rgba(0,0,0,.5) 100%)"></div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:236px;width:240px;height:346px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(18,23,28,.74) 0 9px,rgba(18,23,28,.62) 9px 18px);border:1px solid rgba(255,255,255,.08)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:262px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(18,23,28,.74) 0 9px,rgba(18,23,28,.62) 9px 18px);border:1px solid rgba(255,255,255,.08)"></div>
+<div style="position:absolute;bottom:92px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/tense.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:16px;left:50%;transform:translateX(-50%);width:390px;background:rgba(253,244,222,.97);border:1px solid rgba(250,178,25,.65);border-radius:12px;padding:10px 14px;box-shadow:0 8px 28px rgba(0,0,0,.35)">
+<div style="display:flex;align-items:center"><span style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a86e08">Событие</span><span style="flex:1"></span><span style="font-size:14px;line-height:1;color:#a86e08;cursor:pointer">×</span></div>
+<div style="font-size:12px;line-height:1.5;color:#52514e;margin-top:4px">В приёмной ждёт следующий кандидат — терпение Ирины тает быстрее.</div>
+</div>
+<div style="position:absolute;top:16px;left:16px;display:flex;flex-direction:column;gap:7px;width:212px">
+<div style="display:flex;align-items:center;gap:8px;background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:6px 12px"><span style="font-size:10px;color:rgba(244,244,239,.6);width:78px">Доверие</span><span style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.14)"><span style="display:block;width:48%;height:4px;border-radius:2px;background:#2a78d6"></span></span><span style="font-size:11px;font-weight:600;color:#f4f4ef">48</span></div>
+<div style="display:flex;align-items:center;gap:8px;background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:6px 12px"><span style="font-size:10px;color:rgba(244,244,239,.6);width:78px">Напряжение</span><span style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.14)"><span style="display:block;width:67%;height:4px;border-radius:2px;background:#ec835a"></span></span><span style="font-size:11px;font-weight:600;color:#f4f4ef">67</span></div>
+<div style="display:flex;align-items:center;gap:8px;background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:6px 12px"><span style="font-size:10px;color:rgba(244,244,239,.6);width:78px">Терпение</span><span style="flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.14)"><span style="display:block;width:52%;height:4px;border-radius:2px;background:#fab219"></span></span><span style="font-size:11px;font-weight:600;color:#f4f4ef">52</span></div>
+<div style="background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:10px 12px">
+<div style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,239,.55)">На столе</div>
+<div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px">92 000 ₽ / мес</div>
+<div style="display:flex;gap:6px;margin-top:8px">
+<div style="flex:1;text-align:center;padding:6px 0;border-radius:7px;background:#2a78d6;color:#fff;font-size:11.5px;font-weight:600;cursor:pointer" style-hover="background:#1c5cab">Принять</div>
+<div style="flex:1;text-align:center;padding:6px 0;border-radius:7px;border:1px solid rgba(255,255,255,.18);color:rgba(244,244,239,.8);font-size:11.5px;font-weight:600;cursor:pointer">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:16px;right:16px;display:flex;flex-direction:column;gap:7px;width:226px;align-items:flex-end">
+<div style="display:flex;align-items:center;gap:9px;background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:5px 12px 5px 5px">
+<span style="width:28px;height:28px;border-radius:50%;background:repeating-linear-gradient(45deg,#3a4047 0 5px,#2c3138 5px 10px);border:1px solid rgba(255,255,255,.14);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:rgba(244,244,239,.7)">И</span>
+<span style="font-size:12px;font-weight:600;color:#fff">Ирина Волкова</span>
+<span style="width:7px;height:7px;border-radius:50%;background:#ec835a"></span>
+<span style="font-size:10.5px;color:rgba(244,244,239,.72)">напряжена</span>
+</div>
+<div style="display:flex;gap:6px">
+<span style="padding:5px 11px;font-size:10.5px;font-weight:600;color:rgba(244,244,239,.78);background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:999px;cursor:pointer">Журнал</span>
+<span style="padding:5px 11px;font-size:10.5px;font-weight:600;color:rgba(244,244,239,.78);background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:999px;cursor:pointer">Бриф</span>
+<span style="padding:5px 11px;font-size:10.5px;font-weight:600;color:#0b0b0b;background:#cde2fb;border:1px solid #cde2fb;border-radius:999px;cursor:pointer">Подсказки</span>
+</div>
+<div style="background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:8px 11px;width:200px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8db8ec">Подсказка 1</div><div style="font-size:11px;line-height:1.45;color:rgba(244,244,239,.8);margin-top:3px">Признайте её аргумент, потом задайте вопрос.</div></div>
+<div style="background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:8px 11px;width:200px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8db8ec">Подсказка 2</div><div style="font-size:11px;line-height:1.45;color:rgba(244,244,239,.8);margin-top:3px">Напряжение 67 — пауза или кофе собьют темп.</div></div>
+<div style="background:rgba(14,17,21,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.10);border-radius:10px;padding:8px 11px;width:200px"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8db8ec">Подсказка 3</div><div style="font-size:11px;line-height:1.45;color:rgba(244,244,239,.8);margin-top:3px">Не повторяйте запрос третий раз подряд.</div></div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:rgba(15,17,23,.82);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:13px 22px 15px;box-shadow:0 14px 40px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:9px">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:rgba(244,244,239,.85);display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:rgba(244,244,239,.85);display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:rgba(244,244,239,.85);display:flex;align-items:center;justify-content:center;opacity:.35" title="кулдаун"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:rgba(244,244,239,.85);display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:rgba(244,244,239,.85);display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:rgba(244,244,239,.85);display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+</div>
+<div style="display:flex;align-items:baseline;gap:8px">
+<span style="font-size:13.5px;font-weight:700;color:#fff">Ирина</span>
+<span style="font-size:9px;font-weight:700;letter-spacing:.06em;color:rgba(244,244,239,.6);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:1px 5px">ИИ</span>
+<span style="flex:1"></span>
+<span style="font:12px 'IBM Plex Mono',monospace;color:#ffb08a;border:1px solid rgba(236,131,90,.55);border-radius:999px;padding:3px 10px;background:rgba(236,131,90,.14)">2:31 · свободный</span>
+</div>
+<div style="font-size:15.5px;line-height:1.6;color:#f4f4ef;max-width:1000px">Подождите. Вы второй раз возвращаетесь к цифре, которую я уже назвала. Если это принципиально — скажите прямо, я не люблю ходить кругами.<span style="display:inline-block;width:2px;height:1.05em;background:#cde2fb;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+<span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(244,244,239,.5)">ваш ход</span>
+<span style="border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 12px;font-size:12px;color:rgba(244,244,239,.82);cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb">Признание позиции <span style="font-size:10.5px;font-weight:600;color:#8db8ec">+доверие</span></span>
+<span style="border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 12px;font-size:12px;color:rgba(244,244,239,.82);cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb">Пауза <span style="font-size:10.5px;font-weight:600;color:#7fd67f">−напряжение</span></span>
+<span style="border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 12px;font-size:12px;color:rgba(244,244,239,.82);cursor:pointer" style-hover="border-color:#8db8ec;color:#cde2fb">Смена темы <span style="font-size:10.5px;font-weight:600;color:#ffb08a">риск</span></span>
+<span style="flex:1"></span>
+<span style="font:11px 'IBM Plex Mono',monospace;color:rgba(244,244,239,.5)">ответ · 41 с</span>
+</div>
+<div style="display:flex;gap:10px">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:0 14px;height:42px;font-family:inherit;font-size:13.5px;background:rgba(255,255,255,.07);color:#fff;outline:none">
+<div style="height:42px;padding:0 22px;border-radius:10px;background:#2a78d6;color:#fff;font-size:13.5px;font-weight:600;display:flex;align-items:center;cursor:pointer" style-hover="background:#1c5cab">Сказать</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>«Деловое досье» · бумажное окно, PT Serif + IBM Plex Sans, режим обучения, персонаж расположен</div>
+<div class="dv-card" style="width:1280px"><div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#20262a;font-family:'IBM Plex Sans',system-ui,'Segoe UI',sans-serif">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 58% 42% at 76% 36%,rgba(255,186,118,.24),transparent 62%),radial-gradient(ellipse 44% 36% at 20% 44%,rgba(196,214,214,.13),transparent 60%),repeating-linear-gradient(90deg,transparent 0 218px,rgba(235,244,242,.05) 218px 222px),linear-gradient(180deg,#2a3134 0%,#414c4e 34%,#6a7364 56%,#454a46 76%,#303331 100%)"></div>
+<div style="position:absolute;left:110px;top:200px;width:310px;height:180px;background:rgba(240,246,244,.10);border-radius:4px;filter:blur(7px)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.18) 82%,rgba(0,0,0,.34) 100%)"></div>
+<div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);font:10px 'IBM Plex Mono',monospace;color:rgba(255,255,255,.5)">плейсхолдер · scenes/salary.jpg · 1920×1080</div>
+<div style="position:absolute;left:calc(50% - 120px);bottom:246px;width:240px;height:336px;animation:vnbreathe 4.4s ease-in-out infinite">
+<div style="position:absolute;top:0;left:80px;width:80px;height:92px;border-radius:46%;background:repeating-linear-gradient(45deg,rgba(24,29,32,.68) 0 9px,rgba(24,29,32,.56) 9px 18px);border:1px solid rgba(255,255,255,.08)"></div>
+<div style="position:absolute;top:84px;left:0;width:240px;height:252px;border-radius:110px 110px 12px 12px;background:repeating-linear-gradient(45deg,rgba(24,29,32,.68) 0 9px,rgba(24,29,32,.56) 9px 18px);border:1px solid rgba(255,255,255,.08)"></div>
+<div style="position:absolute;bottom:88px;left:0;width:240px;text-align:center;font:10px/1.6 'IBM Plex Mono',monospace;color:rgba(255,255,255,.66)">sprites/salary/pleased.png<br>900×1200 · PNG альфа</div>
+</div>
+<div style="position:absolute;top:18px;left:18px;width:242px;background:#fcfcfb;border:1px solid #e1e0d9;border-top:2px solid #0b0b0b;border-radius:4px;padding:12px 14px">
+<div style="font-family:'PT Serif',Georgia,serif;font-size:13px;font-weight:700;color:#0b0b0b;padding-bottom:8px;border-bottom:1px solid #e1e0d9">Позиция сторон</div>
+<div style="padding:8px 0;border-bottom:1px solid #e1e0d9"><div style="display:flex;justify-content:space-between;font-size:11px;color:#52514e;margin-bottom:4px"><span>Доверие</span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#0b0b0b">68</span></div><div style="height:4px;background:#edece6"><div style="width:68%;height:4px;background:#2a78d6"></div></div></div>
+<div style="padding:8px 0;border-bottom:1px solid #e1e0d9"><div style="display:flex;justify-content:space-between;font-size:11px;color:#52514e;margin-bottom:4px"><span>Напряжение</span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#0b0b0b">22</span></div><div style="height:4px;background:#edece6"><div style="width:22%;height:4px;background:#fab219"></div></div></div>
+<div style="padding:8px 0;border-bottom:1px solid #e1e0d9"><div style="display:flex;justify-content:space-between;font-size:11px;color:#52514e;margin-bottom:4px"><span>Терпение</span><span style="font:600 11px 'IBM Plex Mono',monospace;color:#0b0b0b">80</span></div><div style="height:4px;background:#edece6"><div style="width:80%;height:4px;background:#0ca30c"></div></div></div>
+<div style="padding-top:10px">
+<div style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#898781">На столе</div>
+<div style="font-family:'PT Serif',Georgia,serif;font-size:18px;font-weight:700;color:#0b0b0b;margin-top:2px">96 000 ₽ / мес</div>
+<div style="font-size:11px;color:#898781;margin-top:2px">оффер Ирины · ваш запрос 105 000</div>
+<div style="display:flex;gap:8px;margin-top:10px">
+<div style="flex:1;text-align:center;padding:7px 0;border-radius:6px;background:#2a78d6;color:#fff;font-size:12px;font-weight:600;cursor:pointer" style-hover="background:#1c5cab">Принять</div>
+<div style="flex:1;text-align:center;padding:7px 0;border-radius:6px;border:1px solid #e1e0d9;color:#52514e;font-size:12px;font-weight:600;cursor:pointer">Выйти</div>
+</div>
+</div>
+</div>
+<div style="position:absolute;top:18px;right:18px;width:246px;display:flex;flex-direction:column;gap:9px">
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-top:2px solid #0b0b0b;border-radius:4px;padding:11px 13px">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:40px;height:40px;border-radius:3px;flex:none;background:repeating-linear-gradient(45deg,#d8d6cd 0 6px,#e6e4dc 6px 12px);border:1px solid #e1e0d9;display:flex;align-items:center;justify-content:center;font-family:'PT Serif',Georgia,serif;font-size:14px;font-weight:700;color:#898781">И</div>
+<div><div style="font-family:'PT Serif',Georgia,serif;font-size:14px;font-weight:700;color:#0b0b0b">Ирина Волкова</div><div style="font-size:10.5px;color:#898781">руководитель отдела продуктов</div></div>
+</div>
+<div style="display:flex;align-items:center;gap:6px;margin-top:8px;padding-top:8px;border-top:1px solid #e1e0d9"><span style="width:7px;height:7px;border-radius:50%;background:#0ca30c"></span><span style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#52514e">расположена</span></div>
+</div>
+<div style="display:flex;gap:12px;padding:0 2px;font-size:11.5px;font-weight:600">
+<span style="color:#52514e;border-bottom:1px dotted #898781;cursor:pointer">Журнал</span>
+<span style="color:#52514e;border-bottom:1px dotted #898781;cursor:pointer">Бриф</span>
+<span style="color:#1c5cab;border-bottom:2px solid #2a78d6;cursor:pointer">Подсказки</span>
+</div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:4px;padding:10px 12px;display:flex;gap:9px"><span style="font-family:'PT Serif',Georgia,serif;font-size:14px;font-weight:700;color:#2a78d6">1.</span><span style="font-size:11.5px;line-height:1.5;color:#52514e">Спросите, что для неё важнее бюджета в этом квартале.</span></div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:4px;padding:10px 12px;display:flex;gap:9px"><span style="font-family:'PT Serif',Georgia,serif;font-size:14px;font-weight:700;color:#2a78d6">2.</span><span style="font-size:11.5px;line-height:1.5;color:#52514e">Она расположена — время назвать вилку 100–110 тыс.</span></div>
+<div style="background:#fcfcfb;border:1px solid #e1e0d9;border-radius:4px;padding:10px 12px;display:flex;gap:9px"><span style="font-family:'PT Serif',Georgia,serif;font-size:14px;font-weight:700;color:#2a78d6">3.</span><span style="font-size:11.5px;line-height:1.5;color:#52514e">Закрепите: пересмотр через полгода письмом.</span></div>
+</div>
+<div style="position:absolute;left:20px;right:20px;bottom:16px;background:#fcfcfb;border:1px solid #e1e0d9;border-top:2px solid #0b0b0b;border-radius:4px;padding:14px 26px 16px;box-shadow:0 12px 36px rgba(10,12,18,.32);display:flex;flex-direction:column;gap:9px">
+<div style="display:flex;gap:10px;align-items:center">
+<div style="width:38px;height:38px;border-radius:9px;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#0b0b0b;color:#0b0b0b"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:9px;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#0b0b0b;color:#0b0b0b"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:9px;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#0b0b0b;color:#0b0b0b"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:9px;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#0b0b0b;color:#0b0b0b"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:9px;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35" title="кулдаун"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:38px;height:38px;border-radius:9px;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;cursor:pointer" style-hover="border-color:#0b0b0b;color:#0b0b0b"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+<span style="flex:1"></span>
+<span style="font:10px 'IBM Plex Mono',monospace;color:#898781;letter-spacing:.06em">режим · обучение</span>
+</div>
+<div style="display:flex;align-items:baseline;gap:9px;padding-bottom:7px;border-bottom:1px solid #e1e0d9">
+<span style="font-family:'PT Serif',Georgia,serif;font-size:17px;font-weight:700;color:#0b0b0b">Ирина Волкова</span>
+<span style="font:9px 'IBM Plex Mono',monospace;color:#898781;border:1px solid #e1e0d9;border-radius:4px;padding:1px 5px;letter-spacing:.06em">реплика · ИИ</span>
+</div>
+<div style="font-family:'PT Serif',Georgia,serif;font-size:16px;line-height:1.65;color:#0b0b0b;max-width:1020px">Хороший вопрос. Если честно, бюджет — не главная моя боль: мне важно, чтобы квартал закрылся без провалов. Расскажите, как вы это видите, — а к цифре вернёмся.<span style="display:inline-block;width:2px;height:1.05em;background:#2a78d6;vertical-align:-2px;margin-left:3px;animation:vnblink 1.05s steps(1) infinite"></span></div>
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+<span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#898781">ваш ход</span>
+<span style="font-size:12.5px;color:#1c5cab;border-bottom:1px dotted #2a78d6;cursor:pointer;padding-bottom:1px">Открытый вопрос <span style="font-size:10px;font-weight:600;color:#898781">+доверие</span></span>
+<span style="font-size:12.5px;color:#1c5cab;border-bottom:1px dotted #2a78d6;cursor:pointer;padding-bottom:1px">План 90 дней <span style="font-size:10px;font-weight:600;color:#898781">+прогресс</span></span>
+<span style="font-size:12.5px;color:#1c5cab;border-bottom:1px dotted #2a78d6;cursor:pointer;padding-bottom:1px">Вилка 100–110 <span style="font-size:10px;font-weight:600;color:#898781">якорь</span></span>
+<span style="font-size:12.5px;color:#1c5cab;border-bottom:1px dotted #2a78d6;cursor:pointer;padding-bottom:1px">Уступка взамен <span style="font-size:10px;font-weight:600;color:#898781">обмен</span></span>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-end">
+<input type="text" placeholder="Ваша реплика…" style="flex:1;border:none;border-bottom:1px solid #0b0b0b;border-radius:0;padding:0 2px 8px;height:34px;font-family:'PT Serif',Georgia,serif;font-size:15px;background:transparent;color:#0b0b0b;outline:none">
+<div style="height:40px;padding:0 24px;border-radius:6px;background:#2a78d6;color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;cursor:pointer" style-hover="background:#1c5cab">Сказать</div>
+</div>
+</div>
+</div></div>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Иконки действий-мелочей ×6 · моно-линия 1.5px, 20×20 в кнопке 40×40, currentColor</div>
+<div class="dv-card" style="width:560px;padding:18px 22px">
+<div style="display:grid;grid-template-columns:96px repeat(6,1fr);gap:10px 8px;align-items:center">
+<span></span>
+<span style="text-align:center;font-size:9.5px;color:#898781">вода</span><span style="text-align:center;font-size:9.5px;color:#898781">блокнот</span><span style="text-align:center;font-size:9.5px;color:#898781">телефон</span><span style="text-align:center;font-size:9.5px;color:#898781">пауза</span><span style="text-align:center;font-size:9.5px;color:#898781">часы</span><span style="text-align:center;font-size:9.5px;color:#898781">кофе</span>
+<span style="font-size:10.5px;color:#898781">обычное</span>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+<span style="font-size:10.5px;color:#898781">hover</span>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #2a78d6;background:#cde2fb;color:#1c5cab;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #2a78d6;background:#cde2fb;color:#1c5cab;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #2a78d6;background:#cde2fb;color:#1c5cab;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #2a78d6;background:#cde2fb;color:#1c5cab;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #2a78d6;background:#cde2fb;color:#1c5cab;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #2a78d6;background:#cde2fb;color:#1c5cab;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+<span style="font-size:10.5px;color:#898781">кулдаун 35%</span>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg></div>
+<div style="width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid #e1e0d9;background:#fcfcfb;color:#52514e;display:flex;align-items:center;justify-content:center;opacity:.35"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg></div>
+</div>
+<div style="margin-top:14px;font-size:10.5px;line-height:1.5;color:#898781;border-top:1px solid #e1e0d9;padding-top:10px">SVG, stroke 1.5px, currentColor — красятся под любой из вариантов (тёмный <a class="dv-oid" href="#1b">1b</a> получает их белыми без правок). Отдаю комплектом по путям §4.3.</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Дальше: «состояния (финал · экзамен · ожидание ответа) для варианта 1a» · «каталог, бриф и разбор в стиле <a class="dv-oid" href="#1c">1c</a>» · «смешать: окно из <a class="dv-oid" href="#1a">1a</a> + HUD-пилюли из <a class="dv-oid" href="#1b">1b</a>»</p>
+</section>
+</x-dc>
+</body>
+</html>

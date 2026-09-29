@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:"IBM Plex Sans",system-ui,"Segoe UI",sans-serif}
+a{color:#14594f;text-decoration:none}a:hover{color:#1f7a6f}
+doc-page:not(:defined){visibility:hidden}
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+<doc-page margin="0.8in">
+<div slot="header" style="display:flex;align-items:baseline;gap:10px;font:9px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#898781;border-bottom:1px solid #e1e0d9;padding-bottom:6px"><span style="color:#14594f;font-weight:600">ТРЕНАЖЁР ПЕРЕГОВОРОВ</span><span>дизайн-спецификация · палитра «хвоя»</span><span style="flex:1"></span><span>v1 · 19.08.2026</span></div>
+
+<div style="margin-top:10px;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#14594f">спецификация для вёрстки и арта</div>
+<h1 style="font-size:27px;font-weight:700;color:#0b0b0b;margin:8px 0 0;line-height:1.25">Тренажёр переговоров: дизайн-система «хвоя»</h1>
+<p style="font-size:13px;line-height:1.65;color:#52514e;margin:10px 0 0;max-width:640px">По этому документу интерфейс собирается без макетов под рукой; эталоны — файл «Варианты дизайна — Партия»: базовый экран партии <b>3a</b>, экраны и состояния <b>4a–4i</b>, иконки <b>1d</b>. Палитра «хвоя» заменяет синий акцент §1 исходного ТЗ (по согласованию); контракт путей ассетов из §4 ТЗ не меняется.</p>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:30px 0 0;padding-top:12px;border-top:2px solid #14594f"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">01</span>Палитра</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 28px;margin-top:12px;font-size:11.5px;color:#52514e">
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#f9f9f7;border:1px solid #e1e0d9;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#f9f9f7</span>фон страницы</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#1f7a6f;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#1f7a6f</span>акцент: действия игрока, доверие</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#fcfcfb;border:1px solid #e1e0d9;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#fcfcfb</span>поверхность карточек</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#14594f;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#14594f</span>акцент тёмный: hover, текст-метки</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#0b0b0b;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#0b0b0b</span>текст основной</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#d5ece6;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#d5ece6</span>акцент светлый: активные табы, бейджи</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#52514e;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#52514e</span>текст вторичный</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#e6f1ee;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#e6f1ee</span>акцент-тон: выбранные карточки, hover чипов</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#898781;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#898781</span>текст приглушённый, метки</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#5f9c53;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#5f9c53</span>статус «хорошо», терпение</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#e1e0d9;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#e1e0d9</span>линии внешние</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#d9a12b;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#d9a12b</span>статус «внимание», напряжение</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#edece6;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#edece6</span>линии внутренние, фон баров</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#d97a3f;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#d97a3f</span>статус «серьёзно»: таймер 75 с+</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#f4f3ef;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#f4f3ef</span>нейтральная заливка: чипы, плашки</div>
+<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #edece6"><span style="width:30px;height:20px;border-radius:4px;background:#c04b3c;flex:none"></span><span style="font:10.5px 'IBM Plex Mono',monospace;color:#0b0b0b;width:74px">#c04b3c</span>статус «критично»: таймер 150 с+, красные линии</div>
+</div>
+<p style="font-size:11.5px;line-height:1.6;color:#52514e;margin:12px 0 0"><b>Стекло поверх сцены:</b> подложка rgba(252,252,251,.94–.96) + backdrop-blur 12–14px. <b>Текст на тёмном</b> (пилюли 1b-типа не используются в основной теме — резерв): #f4f4ef / rgba(244,244,239,.62). <b>Настроения персонажа:</b> спокоен #898781 · расположен #5f9c53 · напряжён #d97a3f · на взводе #c04b3c. <b>Событие:</b> фон rgba(253,244,222,.97), рамка rgba(217,161,43,.6), метка #a8760c. Производные тона строить в oklch с той же светлотой/хромой, что #1f7a6f.</p>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">02</span>Типографика</h2>
+<div style="font-size:11.5px;line-height:1.7;color:#52514e;margin-top:10px">
+<b>IBM Plex Sans</b> 400/500/600/700 — весь UI и реплики. <b>IBM Plex Mono</b> 400–700 — цифры, таймер, метки-теги, пути файлов. Обе с кириллицей (Google Fonts). Фолбэк: system-ui, "Segoe UI".
+<div style="display:grid;grid-template-columns:200px 1fr;gap:3px 18px;margin-top:10px;font-size:11.5px">
+<span style="color:#0b0b0b;font-weight:600">Реплика в VN-окне</span><span>Sans 16px / 1.65, #0b0b0b</span>
+<span style="color:#0b0b0b;font-weight:600">Заголовок экрана</span><span>Sans 20–27px / 700</span>
+<span style="color:#0b0b0b;font-weight:600">Имя на ярлыке / в журнале</span><span>Sans 13px / 700</span>
+<span style="color:#0b0b0b;font-weight:600">UI-текст, кнопки</span><span>Sans 12–13.5px / 500–600</span>
+<span style="color:#0b0b0b;font-weight:600">Подписи, комментарии</span><span>Sans 11–11.5px / 400, #52514e или #898781</span>
+<span style="color:#0b0b0b;font-weight:600">Метка-тег (замена нумерации)</span><span>Mono 9px / 600, UPPERCASE, letter-spacing .12–.14em, #14594f</span>
+<span style="color:#0b0b0b;font-weight:600">Секции-хедеры карточек</span><span>Sans 10px / 700, UPPERCASE, ls .1em, #898781</span>
+<span style="color:#0b0b0b;font-weight:600">Таймер, счёт, дельты</span><span>Mono: 12px пилюля · 58px/700 герой-счёт · 9.5–11px дельты</span>
+</div>
+<div style="margin-top:8px">Минимальный кегль — 9px (только mono-метки). Дельты знаком: рост доверия/прогресс — #14594f, снижение напряжения — #5f9c53, риск/потери — #c04b3c или #c4703f.</div>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">03</span>Поверхности, радиусы, тени</h2>
+<div style="display:grid;grid-template-columns:200px 1fr;gap:3px 18px;margin-top:10px;font-size:11.5px;line-height:1.6;color:#52514e">
+<span style="color:#0b0b0b;font-weight:600">Радиусы</span><span>VN-окно 18 · HUD-карточки 12–14 · кнопки 9–12 · режим-карты 12 · пилюли/чипы 999 · бейджи 4–7 · карточки каталога 12 · финал-карта 16</span>
+<span style="color:#0b0b0b;font-weight:600">Тень VN-окна</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px">0 18px 44px rgba(10,12,18,.32)</span>
+<span style="color:#0b0b0b;font-weight:600">Тень HUD-карточек</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px">0 8px 24px rgba(10,12,18,.18)</span>
+<span style="color:#0b0b0b;font-weight:600">Тень акцентной кнопки</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px">0 2px 8px rgba(31,122,111,.4)</span>
+<span style="color:#0b0b0b;font-weight:600">Тень имени-ярлыка</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px">0 4px 12px rgba(10,12,18,.14)</span>
+<span style="color:#0b0b0b;font-weight:600">Тень боковой панели</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px">-24px 0 60px rgba(0,0,0,.35)</span>
+<span style="color:#0b0b0b;font-weight:600">Сцена</span><span>виньетка снизу: градиент к rgba(0,0,0,.4) на 100% высоты (начало ~58%); тень под персонажем — эллипс 300×30, blur 12, rgba(0,0,0,.34), у линии стола</span>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">04</span>Компоненты</h2>
+<div style="font-size:11.5px;line-height:1.65;color:#52514e;margin-top:10px">
+<p style="margin:0"><b style="color:#0b0b0b">Кнопка primary.</b> Высота 44 (в HUD — 33), фон #1f7a6f, текст #fff 13.5/600, hover #14594f. <b style="color:#0b0b0b">Ghost:</b> рамка #e1e0d9, текст #52514e, hover рамка #898781. Недоступность/ожидание — opacity .55.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Поле ввода.</b> Высота 44, radius 12, рамка #e1e0d9, фон #fff, внутр. тень inset 0 1px 3px rgba(10,12,18,.05); фокус: рамка #1f7a6f + кольцо 0 0 0 3px #d5ece6; заблокировано: фон #f4f3ef, текст #898781.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Чип приёма.</b> Пилюля #f4f3ef, padding 6×13, текст 12/500 #0b0b0b; внутри — бейдж дельты: белая мини-пилюля, mono 10/600 цветом эффекта. Hover: рамка #1f7a6f + фон #e6f1ee. В экзамене чипы не рендерятся.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Метрика (доверие/напряжение/терпение).</b> Строка: название 11px · дельта mono 9.5 · значение 11.5/700; бар 6px radius 3, фон #edece6, заливка градиентом 90° от светлого тона к основному (#4da296→#1f7a6f, #e0b45c→#d9a12b, #8bbb7d→#5f9c53).</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Шкала «на столе» / ZOPA.</b> Трек 6–8px #edece6; зона соглашения #d5ece6; маркеры-точки 10–12px: белые с рамкой 2.5–3px (оффер — #1f7a6f, якорь — #14594f, старт — #898781), итог — сплошная #14594f; подписи mono 9.5 #898781.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Карточка подсказок.</b> Хедер «ПОДСКАЗКИ» 10/700 caps #898781; пункты через линию #edece6; каждый: метка-тег (mono 9 caps #14594f: «якорь», «рынок», «темп»…) + текст 11.5/1.45. Нумерации и цифр в кружках нет нигде в системе.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Плашка настроения.</b> Пилюля #f4f3ef: точка 7px цветом состояния + подпись 11px («спокойна / расположена / напряжена / на взводе»). Экзамен: точка-контур 1.5px #b9b7b0 без заливки + курсив «настроение скрыто».</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Имя-ярлык окна.</b> Плашка на верхней кромке VN-окна (top −15, left 24): имя 13/700 + бейдж источника «ИИ» (mono 9/700 caps, рамка #e1e0d9). Во время ожидания имя заменяется на «…».</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Лоток действий-мелочей.</b> Контейнер-пилюля фон rgba(11,11,11,.035), рамка #eae9e2, padding 5×7, gap 7. Кнопка: круг 38–40, фон #fff, рамка #e1e0d9, иконка 20×20 stroke 1.5 цвета #52514e; hover: рамка #1f7a6f, иконка #14594f, фон #d5ece6; кулдаун: рамка #eae9e2, иконка #c9c7c0 (≈35% приглушение) + бейдж остатка mono 8.5 «N с» справа-снизу.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Таймер хода (только свободный режим).</b> Пилюля: caps-метка режима + mono 12 время + мини-прогресс 44×4. Стадии: до 75 с — нейтраль (#52514e на #fff, рамка #e1e0d9); 75–150 с — #a8551f на rgba(217,122,63,.12), рамка rgba(217,122,63,.55); 150 с+ — #8f2f24 на rgba(192,75,60,.13), рамка rgba(192,75,60,.6). Эталон — <b>4h</b>.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Карточка события.</b> 390px, top 16 по центру сцены; заголовок «СОБЫТИЕ» 9.5/700 caps #a8760c + крестик; текст 12/1.5 #52514e; фон/рамка — см. §01. Появление — см. §07.</p>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">05</span>Экраны: раскладка и размеры</h2>
+<div style="font-size:11.5px;line-height:1.65;color:#52514e;margin-top:10px">
+<p style="margin:0"><b style="color:#0b0b0b">Общее.</b> Базовая канва 1280×720, отступ канвы 16–20; топбар продуктовых экранов: высота ~58, поля 48, фон #fcfcfb, линия #e1e0d9.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Каталог (эталон 4a).</b> Сетка 4 карточки, gap 16. Карточка: арт-подложка 104px (кроп сцены + тёплый radial-блик), портрет 44px кругом с рамкой 2px #fcfcfb, свисает на −16 в тело; категория метка-тег → название 14.5/700 → описание 11.5 (мин-высота 50) → сложность точками 7px (#1f7a6f/#e1e0d9, шкала из 4) + чипы навыков #f4f3ef 9.5px. Журнал партий: строки через #edece6 — дата mono · название 12.5/600 · тег режима · итог 11.5 · счёт-бейдж mono 11/700 (#d5ece6/#14594f хорошо, #f3e2c8/#7a5408 средне).</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Бриф (4b).</b> Портрет-карта 330 (арт 412 — кроп calm-спрайта) с подписью и настроением; справа: метка-тег категории и сложности → h1 27/700 → ситуация 13/1.65 (до 660px) → мини-карты Цель/Минимум/Время → 3 режим-карты (выбранная: рамка 1.5px #1f7a6f + фон #e6f1ee + метка «выбран») → CTA 46px «Начать переговоры» + ghost «Карта подготовки».</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Партия (3a).</b> HUD слева 248 (top/left 18): карточка «Позиция» (3 метрики с дельтами) + блок «На столе» (сумма 19/700, шкала офферов, Принять/Выйти). HUD справа 252: плашка персонажа (аватар 40 с кольцом 2px #d5ece6, имя, роль, настроение), сегмент-табы Журнал/Бриф/Подсказки (активный #d5ece6/#14594f), карточка подсказок ≤3. VN-окно: inset 20/20/16, padding 16×24; порядок строк: лоток действий + таймер → реплика 16/1.65 → «ваш ход»: чипы + счётчик ответа mono 11 → ввод + «Сказать». Спрайт 900×1200 по центру, высота 46% канвы, низ уходит за окно ~8px; дыхание и тень — §03/§07.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Оверлеи (4f, 4g).</b> Панель справа 420, фон #fcfcfb, линия слева #e1e0d9, тень §03; шапка padding 16×20: заголовок 14/700 + mono-метка + крестик; сцена под скримом rgba(8,14,13,.45). Журнал: реплики Ирины — просто текст, ходы игрока — плашки #f4f3ef c чипами приёмов (#e6f1ee/#14594f) и «ответ · N с»; ремарки действий — курсив по центру «— вы пододвинули кофе · напряжение −6 —». Бриф-карта: секции через #edece6 с метками-тегами; «Красные линии» — метка #c04b3c.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Разбор (4i).</b> Контент на #f9f9f7, поля 48. Герой-карта: счёт 58/700 #14594f + вердикт-бейдж #d5ece6 + итог 18/700 + мини-статы (Доверие/Пик/Ходы). Грид 1.25fr/1fr: слева «Компетенции» — 5 строк (название · mono N/20 · бар 6px · комментарий 11px; слабая — жёлтым #d9a12b/#a8760c); справа ZOPA, «Ключевые моменты» (время mono · знак +/− в квадрате 18px #d5ece6/#f7dcd7 · текст) и «Рекомендации» (метки-теги). Внизу «Стенограмма»: время mono 9.5 · спикер (игрок — #14594f) · текст · время ответа; ремарки курсивом; ссылка «экспорт .txt».</p>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">06</span>Состояния партии</h2>
+<div style="display:grid;grid-template-columns:150px 1fr;gap:6px 18px;margin-top:10px;font-size:11.5px;line-height:1.6;color:#52514e">
+<span style="color:#0b0b0b;font-weight:600">Ожидание ответа (4c)</span><span>Имя на ярлыке → «…»; вместо реплики — курсив #898781 «обдумывает ответ…» с пульсирующими точками; ввод и Принять/Выйти — opacity .55, placeholder «Дождитесь ответа…»; чипы скрыты, вместо них строка «Ирина отвечает — действия-мелочи доступны»; лоток активен.</span>
+<span style="color:#0b0b0b;font-weight:600">Событие (4c)</span><span>Карточка §04 поверх сцены top 16 по центру; закрытие крестиком; одновременно допустима подсказка с меткой «событие».</span>
+<span style="color:#0b0b0b;font-weight:600">Экзамен (4d)</span><span>Вместо карточки «Позиция» — заглушка: пунктирная рамка #cfccc2, метка «РЕЖИМ ЭКЗАМЕНА», текст «Доверие, напряжение и терпение скрыты до разбора»; «На столе» остаётся; настроение скрыто (§04); табы без «Подсказок»; чипов и таймера нет; в строке лотка справа mono-метка «режим · экзамен».</span>
+<span style="color:#0b0b0b;font-weight:600">Финал (4e)</span><span>Скрим rgba(8,14,13,.6) + blur 2px поверх всего; карточка 470 по центру: метка «ПАРТИЯ ЗАВЕРШЕНА», итог 21/700, описание пакета, строка статов между линиями #edece6, CTA «Разбор партии →» + ghost «В каталог».</span>
+<span style="color:#0b0b0b;font-weight:600">Таймер (4h)</span><span>Пороги 75 с и 150 с, цвета §04; присутствует только в свободном режиме.</span>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">07</span>Движение</h2>
+<div style="display:grid;grid-template-columns:150px 1fr;gap:6px 18px;margin-top:10px;font-size:11.5px;line-height:1.6;color:#52514e">
+<span style="color:#0b0b0b;font-weight:600">Печать реплики</span><span>~2 символа/кадр; клик по окну — показать целиком; курсор — палочка 2px × 1.05em цвета #1f7a6f, мигание steps(1) 1.05 s.</span>
+<span style="color:#0b0b0b;font-weight:600">Ожидание</span><span>Три точки, поочерёдный fade: цикл 1.3 s, сдвиг фаз 0.25 s (opacity .25→1).</span>
+<span style="color:#0b0b0b;font-weight:600">Дыхание спрайта</span><span>translateY 0→2px, 4.4 s ease-in-out, бесконечно. «На взводе» — короткая дрожь: translateX ±0.6px, ~90 ms, 2–3 цикла при смене реплики. Без резких аниме-эффектов.</span>
+<span style="color:#0b0b0b;font-weight:600">Смена эмоции</span><span>Мгновенная подмена спрайта (поза и свет совпадают), допустим кроссфейд ≤120 ms.</span>
+<span style="color:#0b0b0b;font-weight:600">Событие / панели</span><span>Событие: fade + сдвиг сверху −8px, 200 ms. Панели 420: слайд справа 240 ms cubic-bezier(.2,.8,.2,1) + скрим fade.</span>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">08</span>Иконки действий — паспорта SVG</h2>
+<p style="font-size:11.5px;line-height:1.6;color:#52514e;margin:10px 0 0">Обёртка каждой: <span style="font-family:'IBM Plex Mono',monospace;font-size:10px">viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"</span>. Цвет — от кнопки (currentColor). Файлы — в frontend/public по §4.3 ТЗ.</p>
+<div style="display:grid;grid-template-columns:26px 92px 1fr;gap:8px 12px;margin-top:10px;font-size:10px;font-family:'IBM Plex Mono',monospace;color:#52514e;align-items:center">
+<svg viewBox="0 0 20 20" width="22" height="22" fill="none" stroke="#14594f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z"></path><path d="M6.5 8.2h7"></path></svg><span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#0b0b0b">налить воды</span><span>M6 3h8l-1.1 12.6a1.6 1.6 0 0 1-1.6 1.4H8.7a1.6 1.6 0 0 1-1.6-1.4L6 3z · M6.5 8.2h7</span>
+<svg viewBox="0 0 20 20" width="22" height="22" fill="none" stroke="#14594f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="10.4" height="14.4" rx="1.6"></rect><path d="M8.2 6.8h4M8.2 9.8h4M8.2 12.8h2.5"></path></svg><span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#0b0b0b">блокнот</span><span>rect 5 2.8 10.4×14.4 rx1.6 · M8.2 6.8h4 · M8.2 9.8h4 · M8.2 12.8h2.5</span>
+<svg viewBox="0 0 20 20" width="22" height="22" fill="none" stroke="#14594f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6.3" y="2.8" width="7.4" height="14.4" rx="1.8"></rect><path d="M9.2 14.7h1.6"></path></svg><span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#0b0b0b">телефон</span><span>rect 6.3 2.8 7.4×14.4 rx1.8 · M9.2 14.7h1.6</span>
+<svg viewBox="0 0 20 20" width="22" height="22" fill="none" stroke="#14594f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.7 5.6v8.8M12.3 5.6v8.8"></path></svg><span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#0b0b0b">выдержать паузу</span><span>M7.7 5.6v8.8 · M12.3 5.6v8.8</span>
+<svg viewBox="0 0 20 20" width="22" height="22" fill="none" stroke="#14594f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="4.5"></circle><path d="M10 8v2.2l1.6.9"></path><path d="M8 5.6l.4-2.6h3.2l.4 2.6M8 14.4l.4 2.6h3.2l.4-2.6"></path></svg><span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#0b0b0b">взглянуть на часы</span><span>circle 10 10 r4.5 · M10 8v2.2l1.6.9 · M8 5.6l.4-2.6h3.2l.4 2.6 · M8 14.4l.4 2.6h3.2l.4-2.6</span>
+<svg viewBox="0 0 20 20" width="22" height="22" fill="none" stroke="#14594f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z"></path><path d="M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2"></path><path d="M7.4 5.6V4.3M10.6 5.6V4.3"></path></svg><span style="font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:#0b0b0b">пододвинуть кофе</span><span>M4.6 8.2h8.8v4.4a3.4 3.4 0 0 1-3.4 3.4H8a3.4 3.4 0 0 1-3.4-3.4V8.2z · M13.4 9.2h1a1.9 1.9 0 0 1 0 3.8h-1.2 · M7.4 5.6V4.3 · M10.6 5.6V4.3</span>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">09</span>Растровые ассеты (контракт §4 ТЗ, без изменений)</h2>
+<div style="font-size:11.5px;line-height:1.65;color:#52514e;margin-top:10px">
+<p style="margin:0"><b style="color:#0b0b0b">Фоны сцен ×4.</b> <span style="font-family:'IBM Plex Mono',monospace;font-size:10px">frontend/public/scenes/&lt;id&gt;.jpg</span> · 1920×1080, q80, ≤400 КБ; id: salary, supplier, discount, rent. Нижняя треть спокойная (закрыта VN-окном), центр свободен под персонажа, без людей и читаемого текста; сверху код кладёт виньетку §03 — закладывать запас по контрасту.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Спрайты ×16.</b> <span style="font-family:'IBM Plex Mono',monospace;font-size:10px">frontend/public/sprites/&lt;id&gt;/&lt;mood&gt;.png</span> · 900×1200, PNG-альфа, по пояс, низ кадра = линия стола; mood: calm / pleased / tense / angry; поза и свет между эмоциями не меняются. В интерфейсе рендер ~46% высоты экрана.</p>
+<p style="margin:8px 0 0"><b style="color:#0b0b0b">Прочее.</b> Портреты каталога/брифа — кропы calm 1:1; favicon — фирменный знак 32×32 (замена 🤝 в frontend/index.html). До поставки арта интерфейс живёт на плейсхолдерах — это штатный режим.</p>
+</div>
+
+<h2 style="font-size:15px;font-weight:700;color:#0b0b0b;margin:26px 0 0;padding-top:12px;border-top:2px solid #14594f;break-inside:avoid"><span style="font:600 10px 'IBM Plex Mono',monospace;color:#14594f;margin-right:10px">10</span>Чек-лист приёмки</h2>
+<div style="font-size:11.5px;line-height:1.9;color:#52514e;margin-top:8px">
+— Кириллица во всех начертаниях Sans/Mono; реплика ровно 16/1.65.<br>
+— Нигде нет нумерации «цифра в кружке»; везде метки-теги mono caps.<br>
+— Hover/focus: чипы, лоток, табы, поле ввода (кольцо #d5ece6) — как в §04.<br>
+— Кулдаун лотка: приглушение ≈35% + бейдж «N с»; клики заблокированы.<br>
+— Таймер меняет стадию на 75 с и 150 с; вне свободного режима не показывается.<br>
+— Экзамен: не рендерятся метрики, настроение, чипы, подсказки, таймер.<br>
+— Спрайт: низ за верхней кромкой VN-окна, высота 46%, дыхание 4.4 s.<br>
+— Контраст текста на стекле ≥ 4.5:1; событие читаемо на любой сцене.<br>
+— Проверка эмоций: грубость в чате доводит до tense/angry; кофе и вопросы возвращают pleased (§5 ТЗ).
+</div>
+</doc-page>
+</x-dc>
+</body>
+</html>
